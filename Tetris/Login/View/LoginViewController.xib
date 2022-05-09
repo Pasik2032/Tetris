@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="Tetris" customModuleProvider="target">
+            <connections>
+                <outlet property="label" destination="kP1-1Z-jeU" id="JFe-Vj-qSR"/>
+                <outlet property="loginTextField" destination="1qO-C7-Dch" id="mQr-1V-2LY"/>
+                <outlet property="passwordTextField" destination="INS-er-uu6" id="RVJ-w3-sLy"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="1qO-C7-Dch">
+                    <rect key="frame" x="25" y="381" width="364" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="editText:" destination="-1" eventType="editingChanged" id="aJW-dJ-0dx"/>
+                    </connections>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вход" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kiX-7C-Qh7">
+                    <rect key="frame" x="25" y="200" width="178" height="81"/>
+                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="70"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="INS-er-uu6">
+                    <rect key="frame" x="25" y="465" width="364" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="editText:" destination="-1" eventType="editingDidEnd" id="o5Y-jG-l1Z"/>
+                    </connections>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGT-ZA-can">
+                    <rect key="frame" x="157" y="549" width="100" height="31"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="Yf4-Y1-8GP"/>
+                        <constraint firstAttribute="width" constant="101" id="y1w-pM-8h1"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="filled" title="Войти"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="y1w-pM-8h1"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="touchButton:" destination="-1" eventType="touchUpInside" id="37i-gU-cyn"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Не верный логин или пароль" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kP1-1Z-jeU">
+                    <rect key="frame" x="25" y="509" width="364" height="21"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <color key="textColor" systemColor="systemRedColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="SGT-ZA-can" firstAttribute="top" secondItem="INS-er-uu6" secondAttribute="bottom" constant="50" id="3oz-om-8zA"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1qO-C7-Dch" secondAttribute="trailing" constant="25" id="5ML-2d-dil"/>
+                <constraint firstItem="1qO-C7-Dch" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="AtY-zd-DfY"/>
+                <constraint firstItem="SGT-ZA-can" firstAttribute="centerY" relation="lessThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Jf7-rP-mXF"/>
+                <constraint firstItem="SGT-ZA-can" firstAttribute="top" secondItem="INS-er-uu6" secondAttribute="bottom" constant="50" id="Q1t-ZG-LQA"/>
+                <constraint firstItem="kP1-1Z-jeU" firstAttribute="top" secondItem="INS-er-uu6" secondAttribute="bottom" constant="10" id="WYt-lV-alF"/>
+                <constraint firstItem="INS-er-uu6" firstAttribute="top" secondItem="1qO-C7-Dch" secondAttribute="bottom" constant="50" id="XIZ-H6-PN8"/>
+                <constraint firstItem="kP1-1Z-jeU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="YCL-P5-34U"/>
+                <constraint firstItem="kiX-7C-Qh7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="Zp6-u1-9cN"/>
+                <constraint firstItem="1qO-C7-Dch" firstAttribute="top" secondItem="kiX-7C-Qh7" secondAttribute="bottom" constant="100" id="bcY-bd-r9F"/>
+                <constraint firstItem="1qO-C7-Dch" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-50" id="hkq-6T-nlr"/>
+                <constraint firstItem="SGT-ZA-can" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="stV-zv-jNV"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kP1-1Z-jeU" secondAttribute="trailing" constant="25" id="tHt-wX-Pg8"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="INS-er-uu6" secondAttribute="trailing" constant="25" id="ul5-xz-SqT"/>
+                <constraint firstItem="INS-er-uu6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="yft-xA-mBo"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="Jf7-rP-mXF"/>
+                    <exclude reference="Q1t-ZG-LQA"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="137.68115942028987" y="93.75"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
