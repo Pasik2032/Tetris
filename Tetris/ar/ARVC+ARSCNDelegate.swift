@@ -36,34 +36,5 @@ extension ARViewController: ARSCNViewDelegate {
 
     }
 
-    func createFloorNode(anchor: ARPlaneAnchor) -> [SCNNode]{
-        var a : [SCNNode] = []
-        var height: Float = 0
-        var countHeight = 0
-        while countHeight < 20 {
-            var row : [SCNNode] = []
-            countHeight += 1
-            var length = anchor.center.x - ((Float(CGFloat(anchor.extent.x))/koef)*5)
-            var count  = 0
-            while count < 10{
-                count += 1
-                let size = CGFloat(anchor.extent.x)/CGFloat(koef)
-                let geometry = SCNBox(width: size, height: size, length: size, chamferRadius: 0)
-                let floorNode = SCNNode(geometry: geometry)
-                floorNode.position = SCNVector3(x: length, y: height, z: anchor.center.z)
-                floorNode.geometry?.firstMaterial?.isDoubleSided = true
-                floorNode.geometry?.firstMaterial?.diffuse.contents = UIColor.black
-                floorNode.geometry?.firstMaterial?.diffuse.contents = UIImage(named: "box")
-                floorNode.geometry?.firstMaterial?.isDoubleSided = true
-                floorNode.eulerAngles = SCNVector3(Double.pi/2, 0, 0)
-                floorNode.name = "Plane"
-                a.append(floorNode)
-                row.append(floorNode)
-                length += Float(CGFloat(anchor.extent.x))/koef
-            }
-            arr.append(row)
-            height += Float(CGFloat(anchor.extent.x))/koef
-        }
-        return a
-    }
+    
 }

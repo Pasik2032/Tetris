@@ -30,12 +30,25 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
         configUI()
         // Do any additional setup after loading the view.
     }
 
+    private let label: UILabel = {
+        let control = UILabel()
+        control.translatesAutoresizingMaskIntoConstraints = false
+        control.text = "TETRIS AR"
+        control.font = UIFont(name: "HelveticaNeue-Bold", size: 60)
+        control.textAlignment = .center
+        control.textColor = .systemBlue
+        return control
+    }()
+
     private func configUI(){
+        view.addSubview(label)
+        label.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
+        label.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+
         view.addSubview(buttonSingel)
         buttonSingel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         buttonSingel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -100).isActive = true
@@ -52,6 +65,7 @@ class ViewController: UIViewController {
 
     @objc func touchButtonMulty() {
          let vc = LoginViewController(nibName: "LoginViewController", bundle: nil)
+//        let vc = MyltyPlayerViewController()
         self.navigationController?.pushViewController(vc, animated: true)
      }
 

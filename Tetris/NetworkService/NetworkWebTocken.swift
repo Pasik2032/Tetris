@@ -16,25 +16,56 @@ protocol NetworkResponse {
     func cancel()
 }
 
+protocol NetworkGame {
+    func requestGame(str: String)
+    func responseGame(completion: @escaping (String) -> Void)
+}
+
+
 protocol NetworkRequest {
+    var status: Status? {get set}
     func request(str: String,  completion: @escaping (String) -> Void)
 }
-protocol NetworkOnline {
-    func getOnline(completion: @escaping (Result<[UserModel]?, Error>) -> Void)
+
+enum Status {
+    case online
+    case play
+    case ready
+    case reqest
 }
 
-class NetworkWebTocken: NSObject, NetworkAutoresation, NetworkOnline {
+// MARK: - NetworkWebTocken
+class NetworkWebTocken: NSObject{
+//        private let net = "localhost"
+    private let net = "MacBook-Pro-10.local"
+    //MARK: - Fields
+    public static let shared: NetworkWebTocken = NetworkWebTocken()
 
-//    private let net = "localhost"
-        private let net = "MacBook-Pro-10.local"
-
-
+    public var status: Status?
 
     var websocket: URLSessionWebSocketTask?
+    private var cancelClouser: ((String) -> Void)?
+    private var onlineClouser: ((String) -> Void)?
+    private var playClouser: ((String) -> Void)?
+    private var autoresationClouser: ((String) -> Void)?
+    private let eror: (String) -> Void = {str in
+        print("Не обработанно \(str) \(NetworkWebTocken.shared.status)")
+    }
+    //MARK: - Init
+    public static func getNetworkAutoresation() -> NetworkAutoresation {
+        return shared
+    }
 
-    private static let shared: NetworkWebTocken = NetworkWebTocken()
+    public static func getResponseAndRequest() -> NetworkResponse & NetworkRequest {
+        return shared
+    }
 
-    private override init(){
+    public static func getNetworkGame() -> NetworkGame {
+        NetworkWebTocken.shared.status = .play
+        return shared
+    }
+
+    private override init() {
         super.init()
         let url = URL(string: "ws://\(net):8080/websocket")!
         let session = URLSession(
@@ -42,30 +73,12 @@ class NetworkWebTocken: NSObject, NetworkAutoresation, NetworkOnline {
             delegate: self,
             delegateQueue: OperationQueue()
         )
-
         websocket = session.webSocketTask(with: url)
-
         websocket?.resume()
-        print("go")
-
+        print("Соеденение с сервером установленно.")
     }
 
-    private var clouser: ((String) -> Void)?
-
-    func autoresation(str: String,  completion: @escaping (String) -> Void) {
-        websocket?.send(.string(str), completionHandler: { eror in
-            if let eror = eror {
-                print(eror)
-            }
-        })
-        clouser = completion
-        receive()
-    }
-
-    private let eror: (String) -> Void = {str in
-        print("Не обработанно \(str)")
-    }
-
+    // MARK: - receive
     func receive(){
         websocket?.receive(completionHandler: { [weak self] result in
             switch result{
@@ -74,8 +87,10 @@ class NetworkWebTocken: NSObject, NetworkAutoresation, NetworkOnline {
                 case .data(let data):
                     print("data: \(data)")
                 case .string(let str):
-                    print(str)
-                    (self?.clouser ?? self?.eror)!(str)
+                    print("Пришла строка: \(str)")
+                    self?.router(input: str)
+                @unknown default:
+                    print("error")
                 }
             case .failure(let error):
                 print(error)
@@ -84,40 +99,18 @@ class NetworkWebTocken: NSObject, NetworkAutoresation, NetworkOnline {
         })
     }
 
-    public static func getNetworkAutoresation() -> NetworkAutoresation {
-        return shared
-    }
-
-    public static func getNetworkOnline() -> NetworkOnline {
-        return shared
-    }
-
-    public static func getResponseAndRequest() -> NetworkResponse & NetworkRequest {
-        return shared
-    }
-
-
-
-    func getOnline(completion: @escaping (Result<[UserModel]?, Error>) -> Void){
-        // get url.
-        let urlString = "http://\(net):8080/user/online"
-        guard let url = URL(string: urlString) else {return}
-
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            if let error = error {
-                completion(.failure(error))
-                return
-            }
-            do {
-                let obj = try JSONDecoder().decode([UserModel].self, from: data!)
-                completion(.success(obj))
-            }catch{
-                completion(.failure(error))
-            }
-        }.resume()
+    private func router(input: String){
+        switch status {
+        case .online: (onlineClouser ?? eror)(input)
+        case .ready, .reqest: (cancelClouser ?? eror)(input)
+        case .play: (playClouser ?? eror)(input)
+        case .none: (autoresationClouser ?? eror)(input)
+        }
     }
 }
 
+
+// MARK: - URLSessionWebSocketDelegate
 extension NetworkWebTocken: URLSessionWebSocketDelegate{
     func urlSession(_ session: URLSession, webSocketTask: URLSessionWebSocketTask, didOpenWithProtocol protocol: String?) {
         print("connect")
@@ -128,6 +121,7 @@ extension NetworkWebTocken: URLSessionWebSocketDelegate{
     }
 }
 
+// MARK: - Request & Response
 extension NetworkWebTocken: NetworkRequest, NetworkResponse {
     func cancel() {
         websocket?.send(.string("cancel"), completionHandler: { eror in
@@ -143,11 +137,39 @@ extension NetworkWebTocken: NetworkRequest, NetworkResponse {
                 print(eror)
             }
         })
-        self.clouser = completion
+        self.cancelClouser = completion
     }
 
     func response(completion: @escaping (String) -> Void) {
-        self.clouser = completion
+        self.onlineClouser = completion
+    }
+}
+
+//MARK: - Autoresation
+extension NetworkWebTocken: NetworkAutoresation{
+    func autoresation(str: String,  completion: @escaping (String) -> Void) {
+        websocket?.send(.string(str), completionHandler: { eror in
+            if let eror = eror {
+                print(eror)
+            }
+        })
+        autoresationClouser = completion
+        receive()
+    }
+
+}
+
+extension NetworkWebTocken: NetworkGame {
+    func requestGame(str: String) {
+        websocket?.send(.string(str), completionHandler: { eror in
+            if let eror = eror {
+                print(eror)
+            }
+        })
+    }
+
+    func responseGame(completion: @escaping (String) -> Void) {
+        self.playClouser = completion
     }
 
 

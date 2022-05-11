@@ -14,6 +14,7 @@ protocol WaitingRoomViewProtocol: AnyObject {
     func showWaiting(username: String, handel: @escaping (UIAlertAction) -> Void )
     func dismissWaiting()
     func cancelResponse()
+    func showGame(_ presenter: MultyPlayerPresenter)
 }
 
 class WaitingRoomViewController: UIViewController {
@@ -76,6 +77,12 @@ extension WaitingRoomViewController: UITableViewDelegate {
 
 
 extension WaitingRoomViewController: WaitingRoomViewProtocol {
+    func showGame(_ presenter: MultyPlayerPresenter) {
+        let vc = MyltyPlayerViewController()
+        vc.presenter = presenter
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+
 
     func cancelResponse() {
         button.isHidden = true

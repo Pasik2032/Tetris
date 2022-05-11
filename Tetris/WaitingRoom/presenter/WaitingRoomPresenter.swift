@@ -16,14 +16,23 @@ protocol WaitingRoomPresenterProtocol {
 }
 
 class WaitingRoomPresenter: WaitingRoomPresenterProtocol {
+
     func cancelReqens() {
         self.network.cancel()
     }
 
     func touchButton() {
+        network.status = .ready
         network.request(str: "ok") { input in
             if input == "start" {
+                self.network.status = .play
+                let vc = MultyPlayerPresenter()
+                DispatchQueue.main.async {
+                    self.view?.dismissWaiting()
+                    self.view?.showGame(vc)
+                }
                 print("game!")
+                
             } else {
                 print("Error \(input)")
             }
@@ -31,10 +40,18 @@ class WaitingRoomPresenter: WaitingRoomPresenterProtocol {
     }
 
     func touchUser(index: Int) {
+        network.status = .ready
         network.request(str: "response \(users[index].username)") { input in
             if input == "start" {
+                self.network.status = .play
+                let vc = MultyPlayerPresenter()
+                DispatchQueue.main.async {
+                    self.view?.dismissWaiting()
+                    self.view?.showGame(vc)
+                }
                 print("game!")
             } else {
+                self.network.status = .online
                 DispatchQueue.main.async {
                     self.view?.dismissWaiting()
                 }
@@ -45,6 +62,7 @@ class WaitingRoomPresenter: WaitingRoomPresenterProtocol {
             switch action.style {
             case .cancel:
                 print("cancel")
+                self.network.status = .online
                 self.network.cancel()
                 break
             default :
@@ -59,9 +77,10 @@ class WaitingRoomPresenter: WaitingRoomPresenterProtocol {
     public weak var view: WaitingRoomViewProtocol?
     public var users: [UserModel] = []
     private lazy var network = NetworkWebTocken.getResponseAndRequest()
-    private lazy var networkOnline = NetworkWebTocken.getNetworkOnline()
+    private lazy var networkOnline = NetworkAPI.getNetworkOnline()
 
     init() {
+        network.status = .online
         networkResponse()
         networOnline()
     }
@@ -95,7 +114,8 @@ class WaitingRoomPresenter: WaitingRoomPresenterProtocol {
                 DispatchQueue.main.async {
                     self.view?.showResponse(name: String(a[1]))
                 }
-            } else{
+            } else {
+                self.network.status = .online
                 DispatchQueue.main.async {
                     self.view?.cancelResponse()
                 }

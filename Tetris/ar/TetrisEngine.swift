@@ -18,8 +18,20 @@ enum Shapes: Int {
     case T
 }
 
+protocol generateFigureProtocol {
+    func generateFigure(_ index: Int) -> Shapes
+}
+
+class randomGenerateFigure: generateFigureProtocol{
+    func generateFigure(_ index: Int) -> Shapes {
+        let a = Int.random(in: 0...6)
+        return Shapes(rawValue: a)!
+    }
+}
 
 class TetrisEngine {
+
+    private let generate: generateFigureProtocol
 
 //    private static let colors = [
 //        UIColor(red:1.00, green:0.23, blue:0.19, alpha:1.0),
@@ -54,13 +66,15 @@ class TetrisEngine {
     }
     var shap: Shapes
     let view: TetrisView
-    init(_ boxes: [[SCNNode]], view: TetrisView ) {
+    var count = 0
+
+    init(_ boxes: [[SCNNode]], view: TetrisView, generate: generateFigureProtocol = randomGenerateFigure()) {
         self.boxes = TetrisEngine.clear(boxes)
         figure = [(20, 4), (20, 5), (19, 4), (19, 5)]
         speed = 2
         shap = Shapes.O
         self.view = view
-
+        self.generate = generate
 
     }
 
@@ -249,20 +263,23 @@ class TetrisEngine {
         figure[3] = d
         for cordinate in figure {
             boxes[cordinate.0][cordinate.1].geometry?.firstMaterial?.diffuse.contents = color
-            print(String(cordinate.0) + ":" + String(cordinate.1) + " draw")
+//            print(String(cordinate.0) + ":" + String(cordinate.1) + " draw")
         }
     }
 
     public func shiftDown(){
 
         timer?.invalidate()
-        timer = Timer.scheduledTimer(timeInterval: 0.02, target: self, selector: #selector(fall), userInfo: nil, repeats: true)
+        timer = Timer(timeInterval: 0.02, target: self, selector: #selector(fall), userInfo: nil, repeats: true)
+        RunLoop.main.add(timer!, forMode: .common)
+//        timer = Timer.scheduledTimer(timeInterval: 0.02, target: self, selector: #selector(fall), userInfo: nil, repeats: true)
     }
 
     let semaphore = DispatchSemaphore(value: 1)
 
     public func start(){
-        shap = randomShapes()
+        shap = generate.generateFigure(count)
+        count += 1
 
         switch shap {
         case .O:
@@ -298,6 +315,8 @@ class TetrisEngine {
             boxes[cordinate.0][cordinate.1].geometry?.firstMaterial?.diffuse.contents = color
         }
         timer = Timer.scheduledTimer(timeInterval: TimeInterval(speed), target: self, selector: #selector(fall), userInfo: nil, repeats: true)
+
+//        RunLoop.main.add(timer!, forMode: .common)
         print("test")
 
     }
@@ -364,8 +383,4 @@ class TetrisEngine {
         }
     }
 
-    private func randomShapes() -> Shapes{
-        let a = Int.random(in: 0...6)
-        return Shapes(rawValue: a)!
-    }
 }

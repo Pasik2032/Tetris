@@ -12,7 +12,7 @@ import ARKit
 class ARViewController: UIViewController {
 
     // the size of the field depends (inversely proportional)
-    let koef: Float = 15
+    let koef: Float = 20
 
     // array with cubes
     var arr : [[SCNNode]] = [[]]
@@ -46,7 +46,7 @@ class ARViewController: UIViewController {
     }()
 
 
-    private weak var sceneView: ARSCNView? = {
+     weak var sceneView: ARSCNView? = {
         let sceneView = ARSCNView()
 //        sceneView.delegate = self
         return sceneView
@@ -56,7 +56,8 @@ class ARViewController: UIViewController {
         super.viewDidLoad()
         view.addSubview(sceneView!)
         sceneView!.frame = view.frame
-
+        self.tabBarController?.navigationItem.hidesBackButton = true
+        self.navigationItem.setHidesBackButton(true, animated: false)
         ConfigSwipes()
 
         // Set the view's delegate
@@ -64,6 +65,37 @@ class ARViewController: UIViewController {
 
         ConfigScoreLabel()
         // Do any additional setup after loading the view.
+    }
+
+    func createFloorNode(anchor: ARPlaneAnchor) -> [SCNNode]{
+        var a : [SCNNode] = []
+        var height: Float = 0
+        var countHeight = 0
+        while countHeight < 20 {
+            var row : [SCNNode] = []
+            countHeight += 1
+            var length = anchor.center.x - ((Float(CGFloat(anchor.extent.x))/koef)*5)
+            var count  = 0
+            while count < 10{
+                count += 1
+                let size = CGFloat(anchor.extent.x)/CGFloat(koef)
+                let geometry = SCNBox(width: size, height: size, length: size, chamferRadius: 0)
+                let floorNode = SCNNode(geometry: geometry)
+                floorNode.position = SCNVector3(x: length, y: height, z: anchor.center.z)
+                floorNode.geometry?.firstMaterial?.isDoubleSided = true
+                floorNode.geometry?.firstMaterial?.diffuse.contents = UIColor.black
+                floorNode.geometry?.firstMaterial?.diffuse.contents = UIImage(named: "box")
+                floorNode.geometry?.firstMaterial?.isDoubleSided = true
+                floorNode.eulerAngles = SCNVector3(Double.pi/2, 0, 0)
+                floorNode.name = "Plane"
+                a.append(floorNode)
+                row.append(floorNode)
+                length += Float(CGFloat(anchor.extent.x))/koef
+            }
+            arr.append(row)
+            height += Float(CGFloat(anchor.extent.x))/koef
+        }
+        return a
     }
 
     // MARK: - Swipes
@@ -127,7 +159,7 @@ class ARViewController: UIViewController {
         sceneView?.addSubview(backgrond)
         backgrond.translatesAutoresizingMaskIntoConstraints = false
         backgrond.topAnchor.constraint(equalTo: sceneView!.topAnchor, constant: 40).isActive = true
-        backgrond.rightAnchor.constraint(equalTo: sceneView!.rightAnchor, constant: -10).isActive = true
+        backgrond.leftAnchor.constraint(equalTo: sceneView!.leftAnchor, constant: 10).isActive = true
         backgrond.heightAnchor.constraint(equalToConstant: 100).isActive = true
         backgrond.widthAnchor.constraint(equalToConstant: 100).isActive = true
         backgrond.layer.cornerRadius = 5
@@ -135,6 +167,26 @@ class ARViewController: UIViewController {
         scoreLabel.translatesAutoresizingMaskIntoConstraints = false
         scoreLabel.centerXAnchor.constraint(equalTo: backgrond.centerXAnchor).isActive = true
         scoreLabel.centerYAnchor.constraint(equalTo: backgrond.centerYAnchor).isActive = true
+    }
+
+    func configExit() {
+        let cancel = UIButton(type: .close)
+//        cancel.setTitle("X", for: .normal)
+//        cancel.backgroundColor = .yellow
+        cancel.addTarget(self, action: #selector(exit), for: .touchUpInside)
+        sceneView?.addSubview(cancel)
+        cancel.translatesAutoresizingMaskIntoConstraints = false
+        cancel.topAnchor.constraint(equalTo: sceneView!.topAnchor, constant: 40).isActive = true
+        cancel.rightAnchor.constraint(equalTo: sceneView!.rightAnchor, constant: -10).isActive = true
+        cancel.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        cancel.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        cancel.layer.cornerRadius = 5
+
+    }
+
+    @objc  func exit(){
+        print("eexit")
+        self.navigationController?.popViewController(animated: true)
     }
 
     //MARK: - Life cycle
@@ -151,6 +203,19 @@ class ARViewController: UIViewController {
         sceneView?.session.pause()
     }
 
+    func endGame(scope: Int) {
+        print("func")
+
+        gameOverLabel.text = "Game over\n Scope: " + String(scope)
+
+        sceneView?.addSubview(gameOverLabel)
+
+        gameOverLabel.centerXAnchor.constraint(equalTo: sceneView!.centerXAnchor).isActive = true
+        gameOverLabel.centerYAnchor.constraint(equalTo: sceneView!.centerYAnchor).isActive = true
+        tetris = nil
+        configExit()
+    }
+
 }
 
 protocol TetrisView {
@@ -165,15 +230,5 @@ extension ARViewController: TetrisView {
     }
 
 
-    func endGame(scope: Int) {
-        print("func")
 
-        gameOverLabel.text = "Game over\n Scope: " + String(scope)
-
-        sceneView?.addSubview(gameOverLabel)
-
-        gameOverLabel.centerXAnchor.constraint(equalTo: sceneView!.centerXAnchor).isActive = true
-        gameOverLabel.centerYAnchor.constraint(equalTo: sceneView!.centerYAnchor).isActive = true
-        tetris = nil
-    }
 }
