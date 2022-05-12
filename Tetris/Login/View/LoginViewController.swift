@@ -51,6 +51,7 @@ class LoginViewController: UIViewController {
 extension LoginViewController: viewLoginProtocol {
     func showWaiting() {
         let vc = WaitingRoomViewController(nibName: "WaitingRoomViewController", bundle: nil)
+        vc.username = loginTextField.text
        self.navigationController?.pushViewController(vc, animated: true)
     }
 

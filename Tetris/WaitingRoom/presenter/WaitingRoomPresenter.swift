@@ -75,6 +75,7 @@ class WaitingRoomPresenter: WaitingRoomPresenterProtocol {
 
 
     public weak var view: WaitingRoomViewProtocol?
+    public var username: String?
     public var users: [UserModel] = []
     private lazy var network = NetworkWebTocken.getResponseAndRequest()
     private lazy var networkOnline = NetworkAPI.getNetworkOnline()
@@ -93,7 +94,7 @@ class WaitingRoomPresenter: WaitingRoomPresenterProtocol {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let users):
-                    self.users = users ?? []
+                    self.users = users?.filter{self.username?.caseInsensitiveCompare($0.username) != .orderedSame} ?? []
                     if self.users.isEmpty {
                         self.view?.showNotOnline()
                     } else{

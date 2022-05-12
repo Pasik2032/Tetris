@@ -88,6 +88,7 @@ class NetworkWebTocken: NSObject{
                     print("data: \(data)")
                 case .string(let str):
                     print("Пришла строка: \(str)")
+                    if str == "one-time message from server" {return}
                     self?.router(input: str)
                 @unknown default:
                     print("error")

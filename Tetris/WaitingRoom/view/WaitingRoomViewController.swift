@@ -22,6 +22,7 @@ class WaitingRoomViewController: UIViewController {
     private var alert: UIAlertController?
 
     private var presenter = WaitingRoomPresenter()
+    public var username: String?
 
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var button: UIButton!
@@ -36,6 +37,7 @@ class WaitingRoomViewController: UIViewController {
         button.isHidden = true
         button.layer.cornerRadius = 10
         presenter.view = self
+        presenter.username = username
         online.isHidden = true
         tableView.delegate = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
