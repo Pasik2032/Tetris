@@ -72,6 +72,12 @@ class WaitingRoomPresenter: WaitingRoomPresenterProtocol {
 
     }
 
+    public func exit(){
+        NetworkWebTocken.shared.status = .none
+        NetworkWebTocken.shared.requestGame(str: "exit")
+
+    }
+
 
 
     public weak var view: WaitingRoomViewProtocol?

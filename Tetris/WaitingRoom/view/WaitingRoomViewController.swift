@@ -54,6 +54,13 @@ class WaitingRoomViewController: UIViewController {
         labelNotReqest.isHidden = false
         presenter.cancelReqens()
     }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        if self.isMovingFromParent {
+            presenter.exit()
+        }
+        super.viewWillDisappear(animated)
+    }
 }
 
 extension WaitingRoomViewController: UITableViewDataSource {
