@@ -213,7 +213,7 @@ class ARViewController: UIViewController {
         gameOverLabel.centerXAnchor.constraint(equalTo: sceneView!.centerXAnchor).isActive = true
         gameOverLabel.centerYAnchor.constraint(equalTo: sceneView!.centerYAnchor).isActive = true
         tetris = nil
-        configExit()
+//        configExit()
     }
 
 }
