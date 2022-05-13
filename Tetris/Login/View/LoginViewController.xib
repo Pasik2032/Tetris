@@ -66,6 +66,14 @@
                     <color key="textColor" systemColor="systemRedColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NuG-YJ-RAK">
+                    <rect key="frame" x="125" y="610" width="164" height="31"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Зарегистрироваться"/>
+                    <connections>
+                        <action selector="registration:" destination="-1" eventType="touchUpInside" id="zPV-3x-jhT"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -73,8 +81,10 @@
                 <constraint firstItem="SGT-ZA-can" firstAttribute="top" secondItem="INS-er-uu6" secondAttribute="bottom" constant="50" id="3oz-om-8zA"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1qO-C7-Dch" secondAttribute="trailing" constant="25" id="5ML-2d-dil"/>
                 <constraint firstItem="1qO-C7-Dch" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="AtY-zd-DfY"/>
+                <constraint firstItem="NuG-YJ-RAK" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="DD3-YK-tf5"/>
                 <constraint firstItem="SGT-ZA-can" firstAttribute="centerY" relation="lessThanOrEqual" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Jf7-rP-mXF"/>
                 <constraint firstItem="SGT-ZA-can" firstAttribute="top" secondItem="INS-er-uu6" secondAttribute="bottom" constant="50" id="Q1t-ZG-LQA"/>
+                <constraint firstItem="NuG-YJ-RAK" firstAttribute="top" secondItem="SGT-ZA-can" secondAttribute="bottom" constant="30" id="UKq-Ea-4hQ"/>
                 <constraint firstItem="kP1-1Z-jeU" firstAttribute="top" secondItem="INS-er-uu6" secondAttribute="bottom" constant="10" id="WYt-lV-alF"/>
                 <constraint firstItem="INS-er-uu6" firstAttribute="top" secondItem="1qO-C7-Dch" secondAttribute="bottom" constant="50" id="XIZ-H6-PN8"/>
                 <constraint firstItem="kP1-1Z-jeU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="YCL-P5-34U"/>

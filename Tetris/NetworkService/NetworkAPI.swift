@@ -9,6 +9,7 @@ import Foundation
 
 protocol NetworkOnline {
     func getOnline(completion: @escaping (Result<[UserModel]?, Error>) -> Void)
+    func postUser(login: String, password: String, completion: @escaping ((String) -> Void) ) 
 }
 
 class NetworkAPI: NetworkOnline {
@@ -36,6 +37,36 @@ class NetworkAPI: NetworkOnline {
                 completion(.failure(error))
             }
         }.resume()
+    }
+
+    func postUser(login: String, password: String, completion: @escaping ((String) -> Void) ) {
+        let url = URL(string: "http://\(net):8080/user/add")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        let parameters: [String: Any] = [
+            "username": login,
+            "password": password
+        ]
+        request.httpBody = parameters.percentEncoded()
+
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data,
+                let response = response as? HTTPURLResponse,
+                error == nil else { return}
+
+//            guard (200 ... 299) ~= response.statusCode else {                    // check for http errors
+//                print("statusCode should be 2xx, but is \(response.statusCode)")
+//                print("response = \(response)")
+//                
+//                return
+//            }
+
+            let responseString = String(data: data, encoding: .utf8)
+            print("responseString = \(responseString)")
+            completion(responseString ?? "Неизвестная ошибка")
+        }
+
+        task.resume()
     }
 
     public static func getNetworkOnline() -> NetworkOnline {

@@ -35,6 +35,9 @@ class LoginViewController: UIViewController {
     }
 
 
+    @IBAction func registration(_ sender: Any) {
+        self.navigationController?.pushViewController(RegestrationViewController(), animated: true)
+    }
 
     @IBAction func touchButton(_ sender: Any) {
         if let loginTextField = loginTextField.text, let passwordTextField = passwordTextField.text {

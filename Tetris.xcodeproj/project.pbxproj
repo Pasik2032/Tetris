@@ -11,6 +11,9 @@
 		E33F30D928293E1A002ABFBA /* WaitingRoomPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33F30D828293E1A002ABFBA /* WaitingRoomPresenter.swift */; };
 		E33F30DB2829700A002ABFBA /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33F30DA2829700A002ABFBA /* UIView+Shadow.swift */; };
 		E33F30DD28297AA9002ABFBA /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33F30DC28297AA9002ABFBA /* NetworkAPI.swift */; };
+		E34033B7282DBE7400D1EFDC /* RegestrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34033B5282DBE7400D1EFDC /* RegestrationViewController.swift */; };
+		E34033B8282DBE7400D1EFDC /* RegestrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E34033B6282DBE7400D1EFDC /* RegestrationViewController.xib */; };
+		E34033BA282DC07A00D1EFDC /* Dictionary+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34033B9282DC07900D1EFDC /* Dictionary+Extention.swift */; };
 		E35C82CE2828155400FAD0E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35C82CD2828155400FAD0E0 /* AppDelegate.swift */; };
 		E35C82D02828155400FAD0E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35C82CF2828155400FAD0E0 /* SceneDelegate.swift */; };
 		E35C82D22828155400FAD0E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35C82D12828155400FAD0E0 /* ViewController.swift */; };
@@ -34,6 +37,9 @@
 		E33F30D828293E1A002ABFBA /* WaitingRoomPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingRoomPresenter.swift; sourceTree = "<group>"; };
 		E33F30DA2829700A002ABFBA /* UIView+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
 		E33F30DC28297AA9002ABFBA /* NetworkAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAPI.swift; sourceTree = "<group>"; };
+		E34033B5282DBE7400D1EFDC /* RegestrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegestrationViewController.swift; sourceTree = "<group>"; };
+		E34033B6282DBE7400D1EFDC /* RegestrationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegestrationViewController.xib; sourceTree = "<group>"; };
+		E34033B9282DC07900D1EFDC /* Dictionary+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extention.swift"; sourceTree = "<group>"; };
 		E35C82CA2828155400FAD0E0 /* Tetris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tetris.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E35C82CD2828155400FAD0E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E35C82CF2828155400FAD0E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +97,15 @@
 			path = presenter;
 			sourceTree = "<group>";
 		};
+		E34033B4282DBE4C00D1EFDC /* Regestration */ = {
+			isa = PBXGroup;
+			children = (
+				E34033B5282DBE7400D1EFDC /* RegestrationViewController.swift */,
+				E34033B6282DBE7400D1EFDC /* RegestrationViewController.xib */,
+			);
+			path = Regestration;
+			sourceTree = "<group>";
+		};
 		E35C82C12828155400FAD0E0 = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +125,7 @@
 		E35C82CC2828155400FAD0E0 /* Tetris */ = {
 			isa = PBXGroup;
 			children = (
+				E34033B9282DC07900D1EFDC /* Dictionary+Extention.swift */,
 				E3FCDA74282A7DF300125CBB /* multy */,
 				E33F30CF28292D97002ABFBA /* WaitingRoom */,
 				E35C82EE282843DD00FAD0E0 /* NetworkService */,
@@ -147,6 +163,7 @@
 		E35C82E928283B5500FAD0E0 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				E34033B4282DBE4C00D1EFDC /* Regestration */,
 				E35C82F52828761200FAD0E0 /* Presenter */,
 				E35C82F42828760A00FAD0E0 /* Model */,
 				E35C82F3282875EB00FAD0E0 /* View */,
@@ -258,6 +275,7 @@
 				E35C82DA2828155600FAD0E0 /* LaunchScreen.storyboard in Resources */,
 				E3F78D50282C425F001B8E55 /* WaitingRoomViewController.xib in Resources */,
 				E35C82D72828155600FAD0E0 /* Assets.xcassets in Resources */,
+				E34033B8282DBE7400D1EFDC /* RegestrationViewController.xib in Resources */,
 				E35C82ED28283BB500FAD0E0 /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,6 +295,7 @@
 				E3FCDA78282A8E1E00125CBB /* MultyPlayerPresenter.swift in Sources */,
 				E35C82F02828441600FAD0E0 /* NetworkWebTocken.swift in Sources */,
 				E35C82E62828186A00FAD0E0 /* ARVC+ARSCNDelegate.swift in Sources */,
+				E34033BA282DC07A00D1EFDC /* Dictionary+Extention.swift in Sources */,
 				E35C82F72828766200FAD0E0 /* LoginPresenter.swift in Sources */,
 				E35C82E82828199C00FAD0E0 /* TetrisEngine.swift in Sources */,
 				E35C82CE2828155400FAD0E0 /* AppDelegate.swift in Sources */,
@@ -284,6 +303,7 @@
 				E35C82D02828155400FAD0E0 /* SceneDelegate.swift in Sources */,
 				E33F30D928293E1A002ABFBA /* WaitingRoomPresenter.swift in Sources */,
 				E35C82F22828599900FAD0E0 /* UserModel.swift in Sources */,
+				E34033B7282DBE7400D1EFDC /* RegestrationViewController.swift in Sources */,
 				E35C82E4282817C400FAD0E0 /* ARViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
