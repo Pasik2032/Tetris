@@ -18,13 +18,13 @@ class ViewController: UIViewController {
         return control
     }()
 
-    private let buttonMulty: UIButton = {
-        let control = UIButton()
-        control.translatesAutoresizingMaskIntoConstraints = false
-        control.setTitle("Мультиплеер", for: .normal)
-        control.addTarget(self, action: #selector(touchButtonMulty), for: .touchUpInside)
-        return control
-    }()
+//    private let buttonMulty: UIButton = {
+//        let control = UIButton()
+//        control.translatesAutoresizingMaskIntoConstraints = false
+//        control.setTitle("Мультиплеер", for: .normal)
+//        control.addTarget(self, action: #selector(touchButtonMulty), for: .touchUpInside)
+//        return control
+//    }()
 
 
 
@@ -63,11 +63,11 @@ class ViewController: UIViewController {
          self.navigationController?.pushViewController(ARViewController(), animated: true)
      }
 
-    @objc func touchButtonMulty() {
-         let vc = LoginViewController(nibName: "LoginViewController", bundle: nil)
-//        let vc = MyltyPlayerViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
-     }
+//    @objc func touchButtonMulty() {
+//         let vc = LoginViewController(nibName: "LoginViewController", bundle: nil)
+////        let vc = MyltyPlayerViewController()
+//        self.navigationController?.pushViewController(vc, animated: true)
+//     }
 
 
 
