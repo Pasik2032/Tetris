@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     private let buttonSingel: UIButton = {
         let control = UIButton()
         control.translatesAutoresizingMaskIntoConstraints = false
-        control.setTitle("Одиночная игра", for: .normal)
+        control.setTitle("Играть", for: .normal)
         control.addTarget(self, action: #selector(touchButton), for: .touchUpInside)
         return control
     }()
@@ -51,11 +51,11 @@ class ViewController: UIViewController {
 
         view.addSubview(buttonSingel)
         buttonSingel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        buttonSingel.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: -100).isActive = true
+        buttonSingel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
 
-        view.addSubview(buttonMulty)
-        buttonMulty.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        buttonMulty.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 100).isActive = true
+//        view.addSubview(buttonMulty)
+//        buttonMulty.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+//        buttonMulty.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 100).isActive = true
 
     }
 
