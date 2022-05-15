@@ -112,6 +112,15 @@ class TetrisEngine {
         }
     }
 
+    public func run(){
+
+        timer = Timer.scheduledTimer(timeInterval: TimeInterval(speed), target: self, selector: #selector(fall), userInfo: nil, repeats: true)
+    }
+
+    public func paus(){
+        timer?.invalidate()
+    }
+
     public func shiftToRight(){
         if figure[1].1 == 9 || figure[3].1 == 9 || figure[0].1 == 9 || figure[2].1 == 9 {
             return

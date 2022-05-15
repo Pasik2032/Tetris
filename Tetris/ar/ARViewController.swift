@@ -31,16 +31,43 @@ class ARViewController: UIViewController {
     let scoreLabel : UILabel = {
         let control = UILabel()
         control.textColor = .white
-        control.font = control.font.withSize(40)
+        control.font = control.font.withSize(30)
         control.text = String(0)
+        return control
+    }()
+
+    let pauseLabel : UILabel = {
+        let control = UILabel()
+        control.textColor = .white
+        control.font = control.font.withSize(50)
+        control.text = "Pause"
+        control.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+        control.translatesAutoresizingMaskIntoConstraints = false
         return control
     }()
 
     // Label Game Over
     let gameOverLabel: UILabel = {
         let control = UILabel()
-        control.numberOfLines = 0
-        control.font = control.font.withSize(70)
+        control.numberOfLines = 3
+        control.textAlignment = .center
+        control.textColor = .white
+        control.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+        control.font = control.font.withSize(30)
+        control.translatesAutoresizingMaskIntoConstraints = false
+        return control
+    }()
+
+
+    let touchLabel: UILabel = {
+        let control = UILabel()
+        control.numberOfLines = 2
+        control.textAlignment = .center
+        control.layer.cornerRadius = 10
+        control.textColor = .white
+        control.text = "Нажмите на экран что бы начать игру"
+        control.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+        control.font = control.font.withSize(30)
         control.translatesAutoresizingMaskIntoConstraints = false
         return control
     }()
@@ -55,6 +82,9 @@ class ARViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(sceneView!)
+        ConfigTouchLabel()
+        touchLabel.isHidden = true
+        pauseLabel.isHidden = true
         sceneView!.frame = view.frame
         self.tabBarController?.navigationItem.hidesBackButton = true
         self.navigationItem.setHidesBackButton(true, animated: false)
@@ -120,26 +150,45 @@ class ARViewController: UIViewController {
     }
 
     @objc func swipeToRight(sender: UISwipeGestureRecognizer){
+        if isPause {return}
         print("right")
         tetris?.shiftToRight()
     }
 
 
     @objc func swipeToLeft(sender: UISwipeGestureRecognizer){
+        if isPause {return}
         print("left")
         tetris?.shiftToLeft()
     }
 
     @objc func swipeToDown(sender: UISwipeGestureRecognizer){
+        if isPause {return}
         print("down")
         tetris?.shiftDown()
     }
 
+    var isPause: Bool = false
+
     @objc func checkAction(sender : UITapGestureRecognizer) {
         print("touch")
         if tetris != nil || arr == [[]] {
+            if let tetris = tetris {
+                if isPause {
+                    pauseLabel.isHidden = true
+                    isPause = false
+                    tetris.run()
+                    print("!!run")
+                } else {
+                    pauseLabel.isHidden = false
+                    isPause = true
+                    tetris.paus()
+                    print("!!pause")
+                }
+            }
             return
         }
+        touchLabel.isHidden = true
         scoreLabel.text = "0"
         gameOverLabel.removeFromSuperview()
         tetris = TetrisEngine(arr, view: self)
@@ -160,13 +209,29 @@ class ARViewController: UIViewController {
         backgrond.translatesAutoresizingMaskIntoConstraints = false
         backgrond.topAnchor.constraint(equalTo: sceneView!.topAnchor, constant: 40).isActive = true
         backgrond.leftAnchor.constraint(equalTo: sceneView!.leftAnchor, constant: 10).isActive = true
-        backgrond.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        backgrond.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        backgrond.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        backgrond.widthAnchor.constraint(equalToConstant: 50).isActive = true
         backgrond.layer.cornerRadius = 5
         backgrond.addSubview(scoreLabel)
         scoreLabel.translatesAutoresizingMaskIntoConstraints = false
         scoreLabel.centerXAnchor.constraint(equalTo: backgrond.centerXAnchor).isActive = true
         scoreLabel.centerYAnchor.constraint(equalTo: backgrond.centerYAnchor).isActive = true
+
+
+        view.addSubview( pauseLabel)
+        pauseLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        pauseLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        pauseLabel.widthAnchor.constraint(equalToConstant: view.frame.width/1.5).isActive = true
+        pauseLabel.heightAnchor.constraint(equalToConstant: view.frame.height/3).isActive = true
+        pauseLabel.textAlignment = .center
+    }
+
+    fileprivate func ConfigTouchLabel() {
+        view.addSubview(touchLabel)
+        touchLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        touchLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        touchLabel.widthAnchor.constraint(equalToConstant: view.frame.width/1.5).isActive = true
+//        sceneView?.addSubview(pause)
     }
 
     func configExit() {
@@ -178,7 +243,7 @@ class ARViewController: UIViewController {
         cancel.translatesAutoresizingMaskIntoConstraints = false
         cancel.topAnchor.constraint(equalTo: sceneView!.topAnchor, constant: 40).isActive = true
         cancel.rightAnchor.constraint(equalTo: sceneView!.rightAnchor, constant: -10).isActive = true
-        cancel.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        cancel.heightAnchor.constraint(equalToConstant: 25).isActive = true
         cancel.widthAnchor.constraint(equalToConstant: 50).isActive = true
         cancel.layer.cornerRadius = 5
 
@@ -206,7 +271,7 @@ class ARViewController: UIViewController {
     func endGame(scope: Int) {
         print("func")
 
-        gameOverLabel.text = "Game over\n Scope: " + String(scope)
+        gameOverLabel.text = "Game over\n Scope: \(String(scope)) \ntab to start a new game"
 
         sceneView?.addSubview(gameOverLabel)
 

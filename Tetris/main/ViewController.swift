@@ -13,7 +13,9 @@ class ViewController: UIViewController {
     private let buttonSingel: UIButton = {
         let control = UIButton()
         control.translatesAutoresizingMaskIntoConstraints = false
-        control.setTitle("Одиночная игра", for: .normal)
+        control.setTitle("Single player", for: .normal)
+        control.titleLabel?.font = UIFont(name: "HelveticaNeue-Bold", size: 50)
+        control.setTitleColor( .black, for: .normal)
         control.addTarget(self, action: #selector(touchButton), for: .touchUpInside)
         return control
     }()
@@ -21,8 +23,20 @@ class ViewController: UIViewController {
     private let buttonMulty: UIButton = {
         let control = UIButton()
         control.translatesAutoresizingMaskIntoConstraints = false
-        control.setTitle("Мультиплеер", for: .normal)
+        control.setTitle("Multiplayer", for: .normal)
+        control.titleLabel?.font = UIFont(name: "HelveticaNeue-Bold", size: 50)
+        control.setTitleColor( .black, for: .normal)
         control.addTarget(self, action: #selector(touchButtonMulty), for: .touchUpInside)
+        return control
+    }()
+
+    private let buttonControll: UIButton = {
+        let control = UIButton()
+        control.translatesAutoresizingMaskIntoConstraints = false
+        control.setTitle("control", for: .normal)
+        control.setTitleColor(.systemGray, for: .normal)
+//        control.currentTitleColor = .tertiarySystemFill
+        control.addTarget(self, action: #selector(touchButtonControll), for: .touchUpInside)
         return control
     }()
 
@@ -30,6 +44,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         configUI()
         // Do any additional setup after loading the view.
     }
@@ -57,6 +72,10 @@ class ViewController: UIViewController {
         buttonMulty.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         buttonMulty.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 100).isActive = true
 
+        view.addSubview(buttonControll)
+        buttonControll.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        buttonControll.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 300).isActive = true
+
     }
 
     @objc func touchButton() {
@@ -68,6 +87,11 @@ class ViewController: UIViewController {
 //        let vc = MyltyPlayerViewController()
         self.navigationController?.pushViewController(vc, animated: true)
      }
+
+    @objc func touchButtonControll(){
+        let vc = ControlViewController(nibName: "ControlViewController", bundle: nil)
+       self.navigationController?.pushViewController(vc, animated: true)
+    }
 
 
 

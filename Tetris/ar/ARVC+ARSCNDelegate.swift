@@ -34,6 +34,10 @@ extension ARViewController: ARSCNViewDelegate {
             node.addChildNode(nodes)
         }
 
+        DispatchQueue.main.async {
+            self.touchLabel.isHidden = false
+        }
+
     }
 
     

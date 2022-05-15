@@ -24,6 +24,8 @@
 		E35C82F02828441600FAD0E0 /* NetworkWebTocken.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35C82EF2828441600FAD0E0 /* NetworkWebTocken.swift */; };
 		E35C82F22828599900FAD0E0 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35C82F12828599800FAD0E0 /* UserModel.swift */; };
 		E35C82F72828766200FAD0E0 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35C82F62828766200FAD0E0 /* LoginPresenter.swift */; };
+		E3B7CCA0283180DB007C19DC /* ControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B7CC9E283180DB007C19DC /* ControlViewController.swift */; };
+		E3B7CCA1283180DB007C19DC /* ControlViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3B7CC9F283180DB007C19DC /* ControlViewController.xib */; };
 		E3F78D50282C425F001B8E55 /* WaitingRoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3F78D4F282C425F001B8E55 /* WaitingRoomViewController.xib */; };
 		E3FCDA76282A7E1D00125CBB /* MyltyPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FCDA75282A7E1D00125CBB /* MyltyPlayerViewController.swift */; };
 		E3FCDA78282A8E1E00125CBB /* MultyPlayerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FCDA77282A8E1E00125CBB /* MultyPlayerPresenter.swift */; };
@@ -49,6 +51,8 @@
 		E35C82EF2828441600FAD0E0 /* NetworkWebTocken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWebTocken.swift; sourceTree = "<group>"; };
 		E35C82F12828599800FAD0E0 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		E35C82F62828766200FAD0E0 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		E3B7CC9E283180DB007C19DC /* ControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlViewController.swift; sourceTree = "<group>"; };
+		E3B7CC9F283180DB007C19DC /* ControlViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ControlViewController.xib; sourceTree = "<group>"; };
 		E3F78D4F282C425F001B8E55 /* WaitingRoomViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaitingRoomViewController.xib; sourceTree = "<group>"; };
 		E3FCDA75282A7E1D00125CBB /* MyltyPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyltyPlayerViewController.swift; sourceTree = "<group>"; };
 		E3FCDA77282A8E1E00125CBB /* MultyPlayerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultyPlayerPresenter.swift; sourceTree = "<group>"; };
@@ -110,6 +114,7 @@
 		E35C82CC2828155400FAD0E0 /* Tetris */ = {
 			isa = PBXGroup;
 			children = (
+				E3B7CC9B28318081007C19DC /* Control */,
 				E3FCDA74282A7DF300125CBB /* multy */,
 				E33F30CF28292D97002ABFBA /* WaitingRoom */,
 				E35C82EE282843DD00FAD0E0 /* NetworkService */,
@@ -188,6 +193,15 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		E3B7CC9B28318081007C19DC /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				E3B7CC9E283180DB007C19DC /* ControlViewController.swift */,
+				E3B7CC9F283180DB007C19DC /* ControlViewController.xib */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
 		E3FCDA74282A7DF300125CBB /* multy */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,6 +269,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3B7CCA1283180DB007C19DC /* ControlViewController.xib in Resources */,
 				E35C82DA2828155600FAD0E0 /* LaunchScreen.storyboard in Resources */,
 				E3F78D50282C425F001B8E55 /* WaitingRoomViewController.xib in Resources */,
 				E35C82D72828155600FAD0E0 /* Assets.xcassets in Resources */,
@@ -278,6 +293,7 @@
 				E35C82F02828441600FAD0E0 /* NetworkWebTocken.swift in Sources */,
 				E35C82E62828186A00FAD0E0 /* ARVC+ARSCNDelegate.swift in Sources */,
 				E35C82F72828766200FAD0E0 /* LoginPresenter.swift in Sources */,
+				E3B7CCA0283180DB007C19DC /* ControlViewController.swift in Sources */,
 				E35C82E82828199C00FAD0E0 /* TetrisEngine.swift in Sources */,
 				E35C82CE2828155400FAD0E0 /* AppDelegate.swift in Sources */,
 				E3FCDA76282A7E1D00125CBB /* MyltyPlayerViewController.swift in Sources */,
@@ -435,7 +451,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ru.hse.cs.Tetris;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.hse.cs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -462,7 +478,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ru.hse.cs.Tetris;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.hse.cs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
