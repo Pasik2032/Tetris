@@ -52,7 +52,7 @@ class MyltyPlayerViewController: ARViewController {
     let scoreLabelSecond : UILabel = {
         let control = UILabel()
         control.textColor = .white
-        control.font = control.font.withSize(40)
+        control.font = control.font.withSize(30)
         control.text = String(0)
         return control
     }()
@@ -64,8 +64,8 @@ class MyltyPlayerViewController: ARViewController {
         backgrond.translatesAutoresizingMaskIntoConstraints = false
         backgrond.topAnchor.constraint(equalTo: sceneView!.topAnchor, constant: 40).isActive = true
         backgrond.rightAnchor.constraint(equalTo: sceneView!.rightAnchor, constant: -10).isActive = true
-        backgrond.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        backgrond.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        backgrond.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        backgrond.widthAnchor.constraint(equalToConstant: 50).isActive = true
         backgrond.layer.cornerRadius = 5
         backgrond.addSubview(scoreLabelSecond)
         scoreLabelSecond.translatesAutoresizingMaskIntoConstraints = false
@@ -101,6 +101,7 @@ class MyltyPlayerViewController: ARViewController {
         if tetris != nil || arr == [[]] {
             return
         }
+        touchLabel.isHidden = true
         scoreLabel.text = "0"
         gameOverLabel.removeFromSuperview()
         secondView = SecondView(view: self)
