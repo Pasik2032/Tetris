@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63823ACD29F5465000BE8FE2 /* TetrisGameCore in Frameworks */ = {isa = PBXBuildFile; productRef = 63823ACC29F5465000BE8FE2 /* TetrisGameCore */; };
 		E33F30D228292DD1002ABFBA /* WaitingRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33F30D028292DD1002ABFBA /* WaitingRoomViewController.swift */; };
 		E33F30D928293E1A002ABFBA /* WaitingRoomPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33F30D828293E1A002ABFBA /* WaitingRoomPresenter.swift */; };
 		E33F30DB2829700A002ABFBA /* UIView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33F30DA2829700A002ABFBA /* UIView+Shadow.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		63823ACA29F50DDB00BE8FE2 /* TetrisGameCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = TetrisGameCore; path = ../TetrisGameCore; sourceTree = "<group>"; };
 		E33F30D028292DD1002ABFBA /* WaitingRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingRoomViewController.swift; sourceTree = "<group>"; };
 		E33F30D828293E1A002ABFBA /* WaitingRoomPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingRoomPresenter.swift; sourceTree = "<group>"; };
 		E33F30DA2829700A002ABFBA /* UIView+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
@@ -63,12 +65,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63823ACD29F5465000BE8FE2 /* TetrisGameCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		63823ACB29F5465000BE8FE2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E33F30CF28292D97002ABFBA /* WaitingRoom */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,8 +108,10 @@
 		E35C82C12828155400FAD0E0 = {
 			isa = PBXGroup;
 			children = (
+				63823ACA29F50DDB00BE8FE2 /* TetrisGameCore */,
 				E35C82CC2828155400FAD0E0 /* Tetris */,
 				E35C82CB2828155400FAD0E0 /* Products */,
+				63823ACB29F5465000BE8FE2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -227,6 +239,9 @@
 			dependencies = (
 			);
 			name = Tetris;
+			packageProductDependencies = (
+				63823ACC29F5465000BE8FE2 /* TetrisGameCore */,
+			);
 			productName = Tetris;
 			productReference = E35C82CA2828155400FAD0E0 /* Tetris.app */;
 			productType = "com.apple.product-type.application";
@@ -508,6 +523,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		63823ACC29F5465000BE8FE2 /* TetrisGameCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TetrisGameCore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E35C82C22828155400FAD0E0 /* Project object */;
 }
