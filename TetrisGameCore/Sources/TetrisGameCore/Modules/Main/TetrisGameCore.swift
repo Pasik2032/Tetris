@@ -1,5 +1,6 @@
 import Foundation
 import UIKit
+import ARKit
 
 public struct TetrisGameCore {
     public private(set) var gameStatus:               GameStatuses
@@ -17,6 +18,44 @@ public struct TetrisGameCore {
     public private(set) var scoreOfSecondPlayer:      Double
     public private(set) var fieldOfFirstPlayer:       [[FieldCellStatuses]]
     public private(set) var fieldOfSecondPlayer:      [[FieldCellStatuses]]
+    
+    private let generate: generateFigureProtocol
+
+    private static let colors = [
+        UIImage(named: "yellow"),
+        UIImage(named: "cyan"),
+        UIImage(named: "red"),
+        UIImage(named: "blue"),
+        UIImage(named: "orange"),
+        UIImage(named: "pink"),
+        UIImage(named: "gray")]
+
+
+    let boxes: [[SCNNode]]
+    var figure: [(Int, Int)]
+    var color = UIImage(named: "yellow")
+    var speed: Float
+    var timer: Timer?
+    public var scope : Int = 0 {
+        didSet {
+            speed -= 0.04
+            view.editScore(str: String(scope))
+            print("new speed " + String(speed))
+        }
+    }
+    var shap: Shapes
+    let view: TetrisView
+    var count = 0
+
+    init(_ boxes: [[SCNNode]], view: TetrisView, generate: generateFigureProtocol = randomGenerateFigure()) {
+        self.boxes = TetrisEngine.clear(boxes)
+        figure = [(20, 4), (20, 5), (19, 4), (19, 5)]
+        speed = 2
+        shap = Shapes.O
+        self.view = view
+        self.generate = generate
+
+    }
     
     public init(length: Int, width: Int) {
         gameStatus = .notStarted
