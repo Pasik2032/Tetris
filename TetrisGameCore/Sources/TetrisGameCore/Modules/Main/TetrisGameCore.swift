@@ -28,14 +28,15 @@ public struct TetrisGameCore {
         UIImage(named: "blue"),
         UIImage(named: "orange"),
         UIImage(named: "pink"),
-        UIImage(named: "gray")]
-
+        UIImage(named: "gray")
+    ]
 
     let boxes: [[SCNNode]]
     var figure: [(Int, Int)]
     var color = UIImage(named: "yellow")
     var speed: Float
     var timer: Timer?
+    
     public var scope : Int = 0 {
         didSet {
             speed -= 0.04
@@ -43,21 +44,16 @@ public struct TetrisGameCore {
             print("new speed " + String(speed))
         }
     }
+    
     var shap: Shapes
     let view: TetrisView
     var count = 0
-
-    init(_ boxes: [[SCNNode]], view: TetrisView, generate: generateFigureProtocol = randomGenerateFigure()) {
-        self.boxes = TetrisEngine.clear(boxes)
-        figure = [(20, 4), (20, 5), (19, 4), (19, 5)]
-        speed = 2
-        shap = Shapes.O
-        self.view = view
-        self.generate = generate
-
-    }
     
-    public init(length: Int, width: Int) {
+    init(length: Int,
+                width: Int,
+                _ boxes: [[SCNNode]],
+                view: TetrisView,
+                generate: generateFigureProtocol = randomGenerateFigure()) {
         gameStatus = .notStarted
         
         if #available(iOS 15, *) {
@@ -90,5 +86,13 @@ public struct TetrisGameCore {
                 fieldOfSecondPlayer[i].append(FieldCellStatuses.free)
             }
         }
+        
+//        self.boxes = TetrisEngine.clear(boxes)
+        self.boxes = clear(boxes)
+        figure = [(20, 4), (20, 5), (19, 4), (19, 5)]
+        speed = 2
+        shap = Shapes.O
+        self.view = view
+        self.generate = generate
     }
 }

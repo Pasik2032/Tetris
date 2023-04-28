@@ -1,13 +1,13 @@
-//
-//  TetrisEngine.swift
-//  Tetris
-//
-//  Created by Даниил Пасилецкий on 12.03.2022.
-//
-
+////
+////  TetrisEngine.swift
+////  Tetris
+////
+////  Created by Даниил Пасилецкий on 12.03.2022.
+////
+////
 //import Foundation
 //import ARKit
-
+//
 //enum Shapes: Int {
 //    case O = 0
 //    case I
@@ -17,7 +17,7 @@
 //    case J
 //    case T
 //}
-
+//
 //protocol generateFigureProtocol {
 //    func generateFigure(_ index: Int) -> Shapes
 //}
@@ -28,9 +28,9 @@
 //        return Shapes(rawValue: a)!
 //    }
 //}
-
+//
 //class TetrisEngine {
-
+//
 //    private let generate: generateFigureProtocol
 //
 //    private static let colors = [
@@ -68,7 +68,7 @@
 //        self.generate = generate
 //
 //    }
-
+//
 //    static public func clear(_ boxes: [[SCNNode]]) -> [[SCNNode]]{
 //        for i in boxes{
 //            for j in i {
@@ -79,7 +79,7 @@
 //        }
 //        return boxes
 //    }
-
+//
 //    public func shiftToLeft(){
 //        if figure[0].1 == 0 || figure[2].1 == 0 || figure[1].1 == 0 || figure[3].1 == 0{
 //            return
@@ -102,16 +102,16 @@
 //            print(String(cordinate.0) + ":" + String(cordinate.1) + " draw")
 //        }
 //    }
-
+//
 //    public func run(){
 //
 //        timer = Timer.scheduledTimer(timeInterval: TimeInterval(speed), target: self, selector: #selector(fall), userInfo: nil, repeats: true)
 //    }
-
+//
 //    public func paus(){
 //        timer?.invalidate()
 //    }
-
+//
 //    public func shiftToRight(){
 //        if figure[1].1 == 9 || figure[3].1 == 9 || figure[0].1 == 9 || figure[2].1 == 9 {
 //            return
@@ -133,7 +133,7 @@
 //            print(String(cordinate.0) + ":" + String(cordinate.1) + " draw")
 //        }
 //    }
-
+//
 //    public func turn(){
 //
 //        var a, b, c, d : (Int, Int)
@@ -266,7 +266,7 @@
 ////            print(String(cordinate.0) + ":" + String(cordinate.1) + " draw")
 //        }
 //    }
-
+//
 //    public func shiftDown(){
 //
 //        timer?.invalidate()
@@ -274,7 +274,7 @@
 //        RunLoop.main.add(timer!, forMode: .common)
 ////        timer = Timer.scheduledTimer(timeInterval: 0.02, target: self, selector: #selector(fall), userInfo: nil, repeats: true)
 //    }
-
+//
 //    let semaphore = DispatchSemaphore(value: 1)
 //
 //    public func start(){
@@ -320,7 +320,7 @@
 //        print("test")
 //
 //    }
-
+//
 //    func deleteRow(){
 //        var i = 1
 //        while i <= 20 {
@@ -353,8 +353,8 @@
 //            i += 1
 //        }
 //    }
-
-
+//
+//
 //    @objc func fall(timer: Timer){
 //        print("Timer")
 //        for cordinate in figure {
@@ -382,5 +382,5 @@
 //            print(String(cordinate.0) + ":" + String(cordinate.1) + " draw")
 //        }
 //    }
-
+//
 //}
