@@ -293,7 +293,4 @@ extension ARViewController: TetrisView {
     func editScore(str: String) {
         scoreLabel.text = str
     }
-
-
-
 }

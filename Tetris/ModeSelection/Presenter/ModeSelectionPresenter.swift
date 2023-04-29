@@ -22,8 +22,11 @@ final class ModeSelectionPresenter {
   var router: ModeSelectionRouter?
   weak var output: ModeSelectionModuleOutput?
 
-  init(router: ModeSelectionRouter) {
+  private var userService: UserServiceProtocol
+
+  init(router: ModeSelectionRouter, userService: UserServiceProtocol) {
     self.router = router
+    self.userService = userService
   }
 }
 
@@ -44,7 +47,11 @@ extension ModeSelectionPresenter: ModeSelectionViewOutput {
 
 
   func viewDidLoad() {
-
+    userService.getOnline { model in
+      print(model)
+    } failed: { error in
+      print(error)
+    }
   }
 }
 

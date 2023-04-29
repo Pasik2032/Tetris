@@ -11,7 +11,7 @@ import Swinject
 
 typealias ModeSelection = ModeSelectionViewController
 
-final class MTScooterRatesAssembly: Swinject.Assembly {
+final class ModeSelectionAssembly: Swinject.Assembly {
   public func assemble(container: Container) {
     container.register(ModeSelection.self) { resolver in
       let presenter = resolver.resolve(ModeSelectionPresenter.self)!
@@ -24,7 +24,8 @@ final class MTScooterRatesAssembly: Swinject.Assembly {
 
     container.register(ModeSelectionPresenter.self) { resolver in
       let router = resolver.resolve(ModeSelectionRouter.self)!
-      return ModeSelectionPresenter(router: router)
+      let userService = resolver.resolve(UserServiceProtocol.self)!
+      return ModeSelectionPresenter(router: router, userService: userService)
     }.initCompleted { resolver, presenter in
       let view = resolver.resolve(ModeSelection.self)!
       presenter.view = view

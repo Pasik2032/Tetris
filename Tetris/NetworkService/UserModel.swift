@@ -7,6 +7,6 @@
 
 import Foundation
 struct UserModel: Codable {
-    var id: Int
-    var username: String
+  var id: Int
+  var username: String
 }

@@ -7,10 +7,13 @@
 
 import Foundation
 import Swinject
+import NetworkingLayer
 
 @objc public class Assembly: NSObject {
   private static let assemblies: [Swinject.Assembly] = [
-    MTScooterRatesAssembly(),
+    ModeSelectionAssembly(),
+    UserServiceAssembly(),
+    NetworkingLayer.ModuleAssembly(),
   ]
 
   private static let container = Container()

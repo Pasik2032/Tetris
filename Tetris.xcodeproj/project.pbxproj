@@ -27,11 +27,14 @@
 		E3E8A37D29FCFA3400E93D4D /* ModeSelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E8A37929FCFA3400E93D4D /* ModeSelectionPresenter.swift */; };
 		E3E8A37E29FCFA3400E93D4D /* ModeSelectionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E8A37A29FCFA3400E93D4D /* ModeSelectionRouter.swift */; };
 		E3E8A37F29FCFA3400E93D4D /* ModeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E8A37B29FCFA3400E93D4D /* ModeSelectionViewController.swift */; };
-		E3E8A38029FCFA3400E93D4D /* ModeSelectionModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E8A37C29FCFA3400E93D4D /* ModeSelectionModuleConfigurator.swift */; };
+		E3E8A38029FCFA3400E93D4D /* ModeSelectionAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E8A37C29FCFA3400E93D4D /* ModeSelectionAssembly.swift */; };
 		E3E8A38329FCFB2400E93D4D /* UIView + setupUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E8A38229FCFB2400E93D4D /* UIView + setupUI.swift */; };
 		E3E8A38629FCFDCD00E93D4D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E3E8A38529FCFDCD00E93D4D /* SnapKit */; };
 		E3E8A38C29FD0E4B00E93D4D /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = E3E8A38B29FD0E4B00E93D4D /* Swinject */; };
 		E3E8A38F29FD0EE400E93D4D /* AssemblyModuls.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E8A38E29FD0EE400E93D4D /* AssemblyModuls.swift */; };
+		E3E8A39529FD237200E93D4D /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E8A39429FD237200E93D4D /* UserService.swift */; };
+		E3E8A39829FD274200E93D4D /* NetworkingLayer in Frameworks */ = {isa = PBXBuildFile; productRef = E3E8A39729FD274200E93D4D /* NetworkingLayer */; };
+		E3E8A39A29FD2BAC00E93D4D /* UserServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E8A39929FD2BAC00E93D4D /* UserServiceAssembly.swift */; };
 		E3F78D50282C425F001B8E55 /* WaitingRoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3F78D4F282C425F001B8E55 /* WaitingRoomViewController.xib */; };
 		E3FCDA76282A7E1D00125CBB /* MyltyPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FCDA75282A7E1D00125CBB /* MyltyPlayerViewController.swift */; };
 		E3FCDA78282A8E1E00125CBB /* MultyPlayerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FCDA77282A8E1E00125CBB /* MultyPlayerPresenter.swift */; };
@@ -60,9 +63,12 @@
 		E3E8A37929FCFA3400E93D4D /* ModeSelectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectionPresenter.swift; sourceTree = "<group>"; };
 		E3E8A37A29FCFA3400E93D4D /* ModeSelectionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectionRouter.swift; sourceTree = "<group>"; };
 		E3E8A37B29FCFA3400E93D4D /* ModeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectionViewController.swift; sourceTree = "<group>"; };
-		E3E8A37C29FCFA3400E93D4D /* ModeSelectionModuleConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectionModuleConfigurator.swift; sourceTree = "<group>"; };
+		E3E8A37C29FCFA3400E93D4D /* ModeSelectionAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectionAssembly.swift; sourceTree = "<group>"; };
 		E3E8A38229FCFB2400E93D4D /* UIView + setupUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + setupUI.swift"; sourceTree = "<group>"; };
 		E3E8A38E29FD0EE400E93D4D /* AssemblyModuls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyModuls.swift; sourceTree = "<group>"; };
+		E3E8A39229FD16D200E93D4D /* NetworkingLayer */ = {isa = PBXFileReference; lastKnownFileType = text; name = NetworkingLayer; path = Tetris/NetworkingLayer; sourceTree = SOURCE_ROOT; };
+		E3E8A39429FD237200E93D4D /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		E3E8A39929FD2BAC00E93D4D /* UserServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceAssembly.swift; sourceTree = "<group>"; };
 		E3F78D4F282C425F001B8E55 /* WaitingRoomViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaitingRoomViewController.xib; sourceTree = "<group>"; };
 		E3FCDA75282A7E1D00125CBB /* MyltyPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyltyPlayerViewController.swift; sourceTree = "<group>"; };
 		E3FCDA77282A8E1E00125CBB /* MultyPlayerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultyPlayerPresenter.swift; sourceTree = "<group>"; };
@@ -75,6 +81,7 @@
 			files = (
 				E3E8A38629FCFDCD00E93D4D /* SnapKit in Frameworks */,
 				E3E8A38C29FD0E4B00E93D4D /* Swinject in Frameworks */,
+				E3E8A39829FD274200E93D4D /* NetworkingLayer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +119,7 @@
 			children = (
 				E35C82CC2828155400FAD0E0 /* Tetris */,
 				E35C82CB2828155400FAD0E0 /* Products */,
+				E3E8A39629FD274200E93D4D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,6 +134,7 @@
 		E35C82CC2828155400FAD0E0 /* Tetris */ = {
 			isa = PBXGroup;
 			children = (
+				E3E8A39329FD235D00E93D4D /* UsertService */,
 				E3E8A38D29FD0E5300E93D4D /* Assembly */,
 				E3E8A38129FCFAF300E93D4D /* Extension */,
 				E3B7CC9B28318081007C19DC /* Control */,
@@ -134,26 +143,26 @@
 				E35C82EE282843DD00FAD0E0 /* NetworkService */,
 				E35C82E928283B5500FAD0E0 /* Login */,
 				E35C82E22828178800FAD0E0 /* ar */,
-				E35C82E12828177D00FAD0E0 /* main */,
+				E35C82E12828177D00FAD0E0 /* ModeSelection */,
+				E3E8A39129FD168A00E93D4D /* Modules */,
 				E35C82CD2828155400FAD0E0 /* AppDelegate.swift */,
 				E35C82CF2828155400FAD0E0 /* SceneDelegate.swift */,
 				E35C82D62828155600FAD0E0 /* Assets.xcassets */,
 				E35C82D82828155600FAD0E0 /* LaunchScreen.storyboard */,
 				E35C82DB2828155600FAD0E0 /* Info.plist */,
-				E33F30DA2829700A002ABFBA /* UIView+Shadow.swift */,
 			);
 			path = Tetris;
 			sourceTree = "<group>";
 		};
-		E35C82E12828177D00FAD0E0 /* main */ = {
+		E35C82E12828177D00FAD0E0 /* ModeSelection */ = {
 			isa = PBXGroup;
 			children = (
+				E3E8A39029FD15A100E93D4D /* Assembly */,
 				E3E8A38929FD0D1300E93D4D /* Router */,
 				E3E8A38829FCFEA500E93D4D /* Presenter */,
 				E3E8A38729FCFE9200E93D4D /* View */,
-				E3E8A37C29FCFA3400E93D4D /* ModeSelectionModuleConfigurator.swift */,
 			);
-			path = main;
+			path = ModeSelection;
 			sourceTree = "<group>";
 		};
 		E35C82E22828178800FAD0E0 /* ar */ = {
@@ -170,7 +179,6 @@
 			isa = PBXGroup;
 			children = (
 				E35C82F52828761200FAD0E0 /* Presenter */,
-				E35C82F42828760A00FAD0E0 /* Model */,
 				E35C82F3282875EB00FAD0E0 /* View */,
 			);
 			path = Login;
@@ -195,13 +203,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		E35C82F42828760A00FAD0E0 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		E35C82F52828761200FAD0E0 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +221,7 @@
 		E3E8A38129FCFAF300E93D4D /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				E33F30DA2829700A002ABFBA /* UIView+Shadow.swift */,
 				E3E8A38229FCFB2400E93D4D /* UIView + setupUI.swift */,
 			);
 			path = Extension;
@@ -258,6 +260,38 @@
 			path = Assembly;
 			sourceTree = "<group>";
 		};
+		E3E8A39029FD15A100E93D4D /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				E3E8A37C29FCFA3400E93D4D /* ModeSelectionAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		E3E8A39129FD168A00E93D4D /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				E3E8A39229FD16D200E93D4D /* NetworkingLayer */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		E3E8A39329FD235D00E93D4D /* UsertService */ = {
+			isa = PBXGroup;
+			children = (
+				E3E8A39429FD237200E93D4D /* UserService.swift */,
+				E3E8A39929FD2BAC00E93D4D /* UserServiceAssembly.swift */,
+			);
+			path = UsertService;
+			sourceTree = "<group>";
+		};
+		E3E8A39629FD274200E93D4D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E3FCDA74282A7DF300125CBB /* multy */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,6 +320,7 @@
 			packageProductDependencies = (
 				E3E8A38529FCFDCD00E93D4D /* SnapKit */,
 				E3E8A38B29FD0E4B00E93D4D /* Swinject */,
+				E3E8A39729FD274200E93D4D /* NetworkingLayer */,
 			);
 			productName = Tetris;
 			productReference = E35C82CA2828155400FAD0E0 /* Tetris.app */;
@@ -354,10 +389,12 @@
 				E3E8A37D29FCFA3400E93D4D /* ModeSelectionPresenter.swift in Sources */,
 				E3E8A37F29FCFA3400E93D4D /* ModeSelectionViewController.swift in Sources */,
 				E3FCDA78282A8E1E00125CBB /* MultyPlayerPresenter.swift in Sources */,
+				E3E8A39529FD237200E93D4D /* UserService.swift in Sources */,
 				E3E8A38F29FD0EE400E93D4D /* AssemblyModuls.swift in Sources */,
-				E3E8A38029FCFA3400E93D4D /* ModeSelectionModuleConfigurator.swift in Sources */,
+				E3E8A38029FCFA3400E93D4D /* ModeSelectionAssembly.swift in Sources */,
 				E35C82F02828441600FAD0E0 /* NetworkWebTocken.swift in Sources */,
 				E3E8A37E29FCFA3400E93D4D /* ModeSelectionRouter.swift in Sources */,
+				E3E8A39A29FD2BAC00E93D4D /* UserServiceAssembly.swift in Sources */,
 				E35C82E62828186A00FAD0E0 /* ARVC+ARSCNDelegate.swift in Sources */,
 				E3E8A38329FCFB2400E93D4D /* UIView + setupUI.swift in Sources */,
 				E35C82F72828766200FAD0E0 /* LoginPresenter.swift in Sources */,
@@ -606,6 +643,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E3E8A38A29FD0E4B00E93D4D /* XCRemoteSwiftPackageReference "Swinject" */;
 			productName = Swinject;
+		};
+		E3E8A39729FD274200E93D4D /* NetworkingLayer */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NetworkingLayer;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
