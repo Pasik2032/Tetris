@@ -7,14 +7,12 @@
 
 import UIKit
 
-protocol viewLoginProtocol: AnyObject {
-  func showInvalid(_ str:String)
-  func showWaiting()
+protocol LoginViewInputProtocol: AnyObject {
+  func showInvalid(_ str: String)
   func close()
 }
 
-
-class LoginViewController: UIViewController {
+final class LoginViewController: UIViewController {
 
   @IBOutlet weak var loginTextField: UITextField!
   @IBOutlet weak var label: UILabel!
@@ -53,15 +51,9 @@ class LoginViewController: UIViewController {
   }
 }
 
-extension LoginViewController: viewLoginProtocol {
+extension LoginViewController: LoginViewInputProtocol {
   func close() {
     dismiss(animated: true)
-  }
-
-  func showWaiting() {
-    let vc = WaitingRoomViewController(nibName: "WaitingRoomViewController", bundle: nil)
-    vc.username = loginTextField.text
-    self.navigationController?.pushViewController(vc, animated: true)
   }
 
   func showInvalid(_ str:String) {

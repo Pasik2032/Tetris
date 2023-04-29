@@ -97,7 +97,7 @@ class ARViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    func createFloorNode(anchor: ARPlaneAnchor) -> [SCNNode]{
+    func createFloorNode(anchor: ARPlaneAnchor) -> [SCNNode] {
         var a : [SCNNode] = []
         var height: Float = 0
         var countHeight = 0

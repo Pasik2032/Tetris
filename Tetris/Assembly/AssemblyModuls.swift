@@ -12,7 +12,10 @@ import NetworkingLayer
 @objc public class Assembly: NSObject {
   private static let assemblies: [Swinject.Assembly] = [
     ModeSelectionAssembly(),
-    UserServiceAssembly(),
+    AuthorizationServiceAssembly(),
+    OnlineServiceAssembly(),
+    ModeSelectionAssembly(),
+    WaitingRoomAssembly(),
     LogInAssembly(),
     NetworkingLayer.ModuleAssembly(),
   ]

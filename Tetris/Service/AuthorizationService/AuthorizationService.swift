@@ -9,16 +9,12 @@ import Foundation
 import NetworkingLayer
 import UIKit
 
-protocol UserServiceProtocol {
-  func getOnline(
-    succes: @escaping ([UserModel]) -> Void,
-    failed:  @escaping (String) -> Void
-  )
-
-  func authorizationCheck(succes: @escaping ()-> Void)
+protocol AuthorizationServiceProtocol {
+  func authorization(success: @escaping ()-> Void)
+  var name: String? { get }
 }
 
-final class UserService {
+final class AuthorizationService {
   private let networking: NetworkingProtocol
   private let socket: SocketServiceProtocol
 
@@ -28,6 +24,9 @@ final class UserService {
 
   private let userStore: UserDefaults = UserDefaults.standard
   private var data: String?
+  var name: String?
+
+  private var isAuthorization = false
 
   init(networking: NetworkingProtocol, socket: SocketServiceProtocol) {
     self.networking = networking
@@ -35,10 +34,11 @@ final class UserService {
   }
 }
 
-extension UserService: UserServiceProtocol {
-  func authorizationCheck(succes: @escaping () -> Void) {
+extension AuthorizationService: AuthorizationServiceProtocol {
+  func authorization(success: @escaping () -> Void) {
+    if isAuthorization { success() }
     let userData = userStore.string(forKey: "userPassword")
-    callBack = succes
+    callBack = success
     if let userData {
       socket.subscr(self)
       socket.send(userData)
@@ -48,17 +48,9 @@ extension UserService: UserServiceProtocol {
       UIViewController.topMost()?.present(vc, animated: true)
     }
   }
-
-  func getOnline(succes: @escaping ([UserModel]) -> Void, failed:  @escaping (String) -> Void) {
-    networking.request(API: .user(.fetchOnline)) { (model: [UserModel]) in
-      succes(model)
-    } onFailure: { error in
-      failed(error.message)
-    }
-  }
 }
 
-extension UserService: LogInOutputModule {
+extension AuthorizationService: LogInOutputModule {
   func update(
     login: String,
     password: String,
@@ -74,12 +66,14 @@ extension UserService: LogInOutputModule {
   }
 }
 
-extension UserService: SocketServiceDelegate {
+extension AuthorizationService: SocketServiceDelegate {
   func getMessage(str: String) {
     if str == "Соеденение установленно" {
+      name = String(data?.split(separator: " ")[0] ?? "")
       if let data {
         userStore.set(data, forKey: "userPassword")
       }
+      isAuthorization = true
       success?()
       callBack?()
     } else {

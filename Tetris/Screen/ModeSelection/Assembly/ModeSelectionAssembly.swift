@@ -19,13 +19,13 @@ final class ModeSelectionAssembly: Swinject.Assembly {
     }
 
     container.register(ModeSelectionRouter.self) { resolver in
-      return ModeSelectionRouter()
+      return ModeSelectionRouter(resolver: resolver)
     }
 
     container.register(ModeSelectionPresenter.self) { resolver in
       let router = resolver.resolve(ModeSelectionRouter.self)!
-      let userService = resolver.resolve(UserServiceProtocol.self)!
-      return ModeSelectionPresenter(router: router, userService: userService)
+      let authorizationService = resolver.resolve(AuthorizationServiceProtocol.self)!
+      return ModeSelectionPresenter(router: router, authorizationService: authorizationService)
     }.initCompleted { resolver, presenter in
       let view = resolver.resolve(ModeSelection.self)!
       presenter.view = view

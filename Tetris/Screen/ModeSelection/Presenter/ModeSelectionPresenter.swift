@@ -22,11 +22,11 @@ final class ModeSelectionPresenter {
   var router: ModeSelectionRouter?
   weak var output: ModeSelectionModuleOutput?
 
-  private var userService: UserServiceProtocol
+  private var authorizationService: AuthorizationServiceProtocol
 
-  init(router: ModeSelectionRouter, userService: UserServiceProtocol) {
+  init(router: ModeSelectionRouter, authorizationService: AuthorizationServiceProtocol) {
     self.router = router
-    self.userService = userService
+    self.authorizationService = authorizationService
   }
 }
 
@@ -38,8 +38,9 @@ extension ModeSelectionPresenter: ModeSelectionViewOutput {
   }
 
   func touchButtonMulty() {
-    userService.authorizationCheck { [weak self] in
-      self.router?.showMultyGame()
+    authorizationService.authorization { [weak self] in
+      guard let self else { return }
+      self.router?.showWaitingRoom(name: self.authorizationService.name ?? "")
     }
   }
 
@@ -48,11 +49,11 @@ extension ModeSelectionPresenter: ModeSelectionViewOutput {
   }
 
   func viewDidLoad() {
-    userService.getOnline { model in
-      print(model)
-    } failed: { error in
-      print(error)
-    }
+//    userService.getOnline { model in
+//      print(model)
+//    } failed: { error in
+//      print(error)
+//    }
   }
 }
 

@@ -21,7 +21,7 @@ protocol LoginPresenterProtocol: AnyObject {
 }
 
 final class LoginPresenter: LoginPresenterProtocol {
-  weak var view: viewLoginProtocol?
+  weak var view: LoginViewInputProtocol?
   weak var output: LogInOutputModule?
 
   init(output: LogInOutputModule?) {

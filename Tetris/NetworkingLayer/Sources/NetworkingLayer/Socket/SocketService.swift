@@ -60,6 +60,7 @@ public class SocketService: NSObject {
 
 extension SocketService: SocketServiceProtocol {
   public func send(_ string: String) {
+    print("send \(string)")
     websocket.write(string: string)
   }
 

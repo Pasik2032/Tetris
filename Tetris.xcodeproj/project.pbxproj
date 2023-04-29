@@ -32,12 +32,16 @@
 		E3E8A38629FCFDCD00E93D4D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E3E8A38529FCFDCD00E93D4D /* SnapKit */; };
 		E3E8A38C29FD0E4B00E93D4D /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = E3E8A38B29FD0E4B00E93D4D /* Swinject */; };
 		E3E8A38F29FD0EE400E93D4D /* AssemblyModuls.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E8A38E29FD0EE400E93D4D /* AssemblyModuls.swift */; };
-		E3E8A39529FD237200E93D4D /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E8A39429FD237200E93D4D /* UserService.swift */; };
+		E3E8A39529FD237200E93D4D /* AuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E8A39429FD237200E93D4D /* AuthorizationService.swift */; };
 		E3E8A39829FD274200E93D4D /* NetworkingLayer in Frameworks */ = {isa = PBXBuildFile; productRef = E3E8A39729FD274200E93D4D /* NetworkingLayer */; };
-		E3E8A39A29FD2BAC00E93D4D /* UserServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E8A39929FD2BAC00E93D4D /* UserServiceAssembly.swift */; };
+		E3E8A39A29FD2BAC00E93D4D /* AuthorizationServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E8A39929FD2BAC00E93D4D /* AuthorizationServiceAssembly.swift */; };
 		E3E8A39D29FD47A500E93D4D /* LoginAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E8A39C29FD47A500E93D4D /* LoginAssembly.swift */; };
 		E3E8A39F29FD4C0F00E93D4D /* UIViewController + Most.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E8A39E29FD4C0F00E93D4D /* UIViewController + Most.swift */; };
 		E3E8A3A229FD5AC000E93D4D /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = E3E8A3A129FD5AC000E93D4D /* Starscream */; };
+		E3F609D82A0EE6380041DBC9 /* OnlineService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F609D72A0EE6380041DBC9 /* OnlineService.swift */; };
+		E3F609DA2A0EE72B0041DBC9 /* OnlineServiceAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F609D92A0EE72B0041DBC9 /* OnlineServiceAssembly.swift */; };
+		E3F609DD2A0F96740041DBC9 /* WaitingRoomAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F609DC2A0F96740041DBC9 /* WaitingRoomAssembly.swift */; };
+		E3F609E02A0F98A50041DBC9 /* WaitingRoomRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F609DF2A0F98A50041DBC9 /* WaitingRoomRouter.swift */; };
 		E3F78D50282C425F001B8E55 /* WaitingRoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3F78D4F282C425F001B8E55 /* WaitingRoomViewController.xib */; };
 		E3FCDA76282A7E1D00125CBB /* MyltyPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FCDA75282A7E1D00125CBB /* MyltyPlayerViewController.swift */; };
 		E3FCDA78282A8E1E00125CBB /* MultyPlayerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FCDA77282A8E1E00125CBB /* MultyPlayerPresenter.swift */; };
@@ -70,10 +74,14 @@
 		E3E8A38229FCFB2400E93D4D /* UIView + setupUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + setupUI.swift"; sourceTree = "<group>"; };
 		E3E8A38E29FD0EE400E93D4D /* AssemblyModuls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyModuls.swift; sourceTree = "<group>"; };
 		E3E8A39229FD16D200E93D4D /* NetworkingLayer */ = {isa = PBXFileReference; lastKnownFileType = text; name = NetworkingLayer; path = Tetris/NetworkingLayer; sourceTree = SOURCE_ROOT; };
-		E3E8A39429FD237200E93D4D /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
-		E3E8A39929FD2BAC00E93D4D /* UserServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServiceAssembly.swift; sourceTree = "<group>"; };
+		E3E8A39429FD237200E93D4D /* AuthorizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationService.swift; sourceTree = "<group>"; };
+		E3E8A39929FD2BAC00E93D4D /* AuthorizationServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationServiceAssembly.swift; sourceTree = "<group>"; };
 		E3E8A39C29FD47A500E93D4D /* LoginAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAssembly.swift; sourceTree = "<group>"; };
 		E3E8A39E29FD4C0F00E93D4D /* UIViewController + Most.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Most.swift"; sourceTree = "<group>"; };
+		E3F609D72A0EE6380041DBC9 /* OnlineService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineService.swift; sourceTree = "<group>"; };
+		E3F609D92A0EE72B0041DBC9 /* OnlineServiceAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineServiceAssembly.swift; sourceTree = "<group>"; };
+		E3F609DC2A0F96740041DBC9 /* WaitingRoomAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingRoomAssembly.swift; sourceTree = "<group>"; };
+		E3F609DF2A0F98A50041DBC9 /* WaitingRoomRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingRoomRouter.swift; sourceTree = "<group>"; };
 		E3F78D4F282C425F001B8E55 /* WaitingRoomViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaitingRoomViewController.xib; sourceTree = "<group>"; };
 		E3FCDA75282A7E1D00125CBB /* MyltyPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyltyPlayerViewController.swift; sourceTree = "<group>"; };
 		E3FCDA77282A8E1E00125CBB /* MultyPlayerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultyPlayerPresenter.swift; sourceTree = "<group>"; };
@@ -97,27 +105,38 @@
 		E33F30CF28292D97002ABFBA /* WaitingRoom */ = {
 			isa = PBXGroup;
 			children = (
-				E33F30D728293DF9002ABFBA /* presenter */,
-				E33F30D428292DDB002ABFBA /* view */,
+				E3F609DE2A0F98750041DBC9 /* Router */,
+				E3F609DB2A0F96410041DBC9 /* Assembly */,
+				E33F30D728293DF9002ABFBA /* Presenter */,
+				E33F30D428292DDB002ABFBA /* View */,
 			);
 			path = WaitingRoom;
 			sourceTree = "<group>";
 		};
-		E33F30D428292DDB002ABFBA /* view */ = {
+		E33F30D428292DDB002ABFBA /* View */ = {
 			isa = PBXGroup;
 			children = (
 				E3F78D4F282C425F001B8E55 /* WaitingRoomViewController.xib */,
 				E33F30D028292DD1002ABFBA /* WaitingRoomViewController.swift */,
 			);
-			path = view;
+			path = View;
 			sourceTree = "<group>";
 		};
-		E33F30D728293DF9002ABFBA /* presenter */ = {
+		E33F30D728293DF9002ABFBA /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
 				E33F30D828293E1A002ABFBA /* WaitingRoomPresenter.swift */,
 			);
-			path = presenter;
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		E35C684F2A0EDE23003DD8AB /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				E3F609D62A0EE5FE0041DBC9 /* OnlineService */,
+				E3E8A39329FD235D00E93D4D /* AuthorizationService */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		E35C82C12828155400FAD0E0 = {
@@ -140,16 +159,13 @@
 		E35C82CC2828155400FAD0E0 /* Tetris */ = {
 			isa = PBXGroup;
 			children = (
-				E3E8A39329FD235D00E93D4D /* UsertService */,
+				E3F609E12A0FB3310041DBC9 /* Screen */,
+				E35C684F2A0EDE23003DD8AB /* Service */,
 				E3E8A38D29FD0E5300E93D4D /* Assembly */,
 				E3E8A38129FCFAF300E93D4D /* Extension */,
-				E3B7CC9B28318081007C19DC /* Control */,
 				E3FCDA74282A7DF300125CBB /* multy */,
-				E33F30CF28292D97002ABFBA /* WaitingRoom */,
 				E35C82EE282843DD00FAD0E0 /* NetworkService */,
-				E35C82E928283B5500FAD0E0 /* Login */,
 				E35C82E22828178800FAD0E0 /* ar */,
-				E35C82E12828177D00FAD0E0 /* ModeSelection */,
 				E3E8A39129FD168A00E93D4D /* Modules */,
 				E35C82CD2828155400FAD0E0 /* AppDelegate.swift */,
 				E35C82CF2828155400FAD0E0 /* SceneDelegate.swift */,
@@ -218,13 +234,6 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
-		E3B7CC9B28318081007C19DC /* Control */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Control;
-			sourceTree = "<group>";
-		};
 		E3E8A38129FCFAF300E93D4D /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,13 +293,13 @@
 			path = Modules;
 			sourceTree = "<group>";
 		};
-		E3E8A39329FD235D00E93D4D /* UsertService */ = {
+		E3E8A39329FD235D00E93D4D /* AuthorizationService */ = {
 			isa = PBXGroup;
 			children = (
-				E3E8A39429FD237200E93D4D /* UserService.swift */,
-				E3E8A39929FD2BAC00E93D4D /* UserServiceAssembly.swift */,
+				E3E8A39429FD237200E93D4D /* AuthorizationService.swift */,
+				E3E8A39929FD2BAC00E93D4D /* AuthorizationServiceAssembly.swift */,
 			);
-			path = UsertService;
+			path = AuthorizationService;
 			sourceTree = "<group>";
 		};
 		E3E8A39629FD274200E93D4D /* Frameworks */ = {
@@ -306,6 +315,41 @@
 				E3E8A39C29FD47A500E93D4D /* LoginAssembly.swift */,
 			);
 			path = Assembly;
+			sourceTree = "<group>";
+		};
+		E3F609D62A0EE5FE0041DBC9 /* OnlineService */ = {
+			isa = PBXGroup;
+			children = (
+				E3F609D72A0EE6380041DBC9 /* OnlineService.swift */,
+				E3F609D92A0EE72B0041DBC9 /* OnlineServiceAssembly.swift */,
+			);
+			path = OnlineService;
+			sourceTree = "<group>";
+		};
+		E3F609DB2A0F96410041DBC9 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				E3F609DC2A0F96740041DBC9 /* WaitingRoomAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		E3F609DE2A0F98750041DBC9 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				E3F609DF2A0F98A50041DBC9 /* WaitingRoomRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		E3F609E12A0FB3310041DBC9 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				E35C82E12828177D00FAD0E0 /* ModeSelection */,
+				E35C82E928283B5500FAD0E0 /* Login */,
+				E33F30CF28292D97002ABFBA /* WaitingRoom */,
+			);
+			path = Screen;
 			sourceTree = "<group>";
 		};
 		E3FCDA74282A7DF300125CBB /* multy */ = {
@@ -408,16 +452,20 @@
 				E3E8A37F29FCFA3400E93D4D /* ModeSelectionViewController.swift in Sources */,
 				E3E8A39D29FD47A500E93D4D /* LoginAssembly.swift in Sources */,
 				E3FCDA78282A8E1E00125CBB /* MultyPlayerPresenter.swift in Sources */,
-				E3E8A39529FD237200E93D4D /* UserService.swift in Sources */,
+				E3E8A39529FD237200E93D4D /* AuthorizationService.swift in Sources */,
+				E3F609DD2A0F96740041DBC9 /* WaitingRoomAssembly.swift in Sources */,
 				E3E8A38F29FD0EE400E93D4D /* AssemblyModuls.swift in Sources */,
 				E3E8A38029FCFA3400E93D4D /* ModeSelectionAssembly.swift in Sources */,
 				E35C82F02828441600FAD0E0 /* NetworkWebTocken.swift in Sources */,
+				E3F609DA2A0EE72B0041DBC9 /* OnlineServiceAssembly.swift in Sources */,
 				E3E8A37E29FCFA3400E93D4D /* ModeSelectionRouter.swift in Sources */,
-				E3E8A39A29FD2BAC00E93D4D /* UserServiceAssembly.swift in Sources */,
+				E3E8A39A29FD2BAC00E93D4D /* AuthorizationServiceAssembly.swift in Sources */,
 				E35C82E62828186A00FAD0E0 /* ARVC+ARSCNDelegate.swift in Sources */,
 				E3E8A38329FCFB2400E93D4D /* UIView + setupUI.swift in Sources */,
 				E35C82F72828766200FAD0E0 /* LoginPresenter.swift in Sources */,
 				E3E8A39F29FD4C0F00E93D4D /* UIViewController + Most.swift in Sources */,
+				E3F609D82A0EE6380041DBC9 /* OnlineService.swift in Sources */,
+				E3F609E02A0F98A50041DBC9 /* WaitingRoomRouter.swift in Sources */,
 				E3B7CCA0283180DB007C19DC /* ControlViewController.swift in Sources */,
 				E35C82E82828199C00FAD0E0 /* TetrisEngine.swift in Sources */,
 				E35C82CE2828155400FAD0E0 /* AppDelegate.swift in Sources */,
@@ -564,9 +612,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = LJQ6356456;
+				DEVELOPMENT_TEAM = FUD5CPHJR9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Tetris/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Tetris camera use";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -591,9 +640,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = LJQ6356456;
+				DEVELOPMENT_TEAM = FUD5CPHJR9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Tetris/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Tetris camera use";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
