@@ -30,6 +30,8 @@
 		E3E8A38029FCFA3400E93D4D /* ModeSelectionModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E8A37C29FCFA3400E93D4D /* ModeSelectionModuleConfigurator.swift */; };
 		E3E8A38329FCFB2400E93D4D /* UIView + setupUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E8A38229FCFB2400E93D4D /* UIView + setupUI.swift */; };
 		E3E8A38629FCFDCD00E93D4D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E3E8A38529FCFDCD00E93D4D /* SnapKit */; };
+		E3E8A38C29FD0E4B00E93D4D /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = E3E8A38B29FD0E4B00E93D4D /* Swinject */; };
+		E3E8A38F29FD0EE400E93D4D /* AssemblyModuls.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E8A38E29FD0EE400E93D4D /* AssemblyModuls.swift */; };
 		E3F78D50282C425F001B8E55 /* WaitingRoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3F78D4F282C425F001B8E55 /* WaitingRoomViewController.xib */; };
 		E3FCDA76282A7E1D00125CBB /* MyltyPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FCDA75282A7E1D00125CBB /* MyltyPlayerViewController.swift */; };
 		E3FCDA78282A8E1E00125CBB /* MultyPlayerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FCDA77282A8E1E00125CBB /* MultyPlayerPresenter.swift */; };
@@ -60,6 +62,7 @@
 		E3E8A37B29FCFA3400E93D4D /* ModeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectionViewController.swift; sourceTree = "<group>"; };
 		E3E8A37C29FCFA3400E93D4D /* ModeSelectionModuleConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectionModuleConfigurator.swift; sourceTree = "<group>"; };
 		E3E8A38229FCFB2400E93D4D /* UIView + setupUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + setupUI.swift"; sourceTree = "<group>"; };
+		E3E8A38E29FD0EE400E93D4D /* AssemblyModuls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyModuls.swift; sourceTree = "<group>"; };
 		E3F78D4F282C425F001B8E55 /* WaitingRoomViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaitingRoomViewController.xib; sourceTree = "<group>"; };
 		E3FCDA75282A7E1D00125CBB /* MyltyPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyltyPlayerViewController.swift; sourceTree = "<group>"; };
 		E3FCDA77282A8E1E00125CBB /* MultyPlayerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultyPlayerPresenter.swift; sourceTree = "<group>"; };
@@ -71,6 +74,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3E8A38629FCFDCD00E93D4D /* SnapKit in Frameworks */,
+				E3E8A38C29FD0E4B00E93D4D /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +126,7 @@
 		E35C82CC2828155400FAD0E0 /* Tetris */ = {
 			isa = PBXGroup;
 			children = (
+				E3E8A38D29FD0E5300E93D4D /* Assembly */,
 				E3E8A38129FCFAF300E93D4D /* Extension */,
 				E3B7CC9B28318081007C19DC /* Control */,
 				E3FCDA74282A7DF300125CBB /* multy */,
@@ -245,6 +250,14 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		E3E8A38D29FD0E5300E93D4D /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				E3E8A38E29FD0EE400E93D4D /* AssemblyModuls.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
 		E3FCDA74282A7DF300125CBB /* multy */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +285,7 @@
 			name = Tetris;
 			packageProductDependencies = (
 				E3E8A38529FCFDCD00E93D4D /* SnapKit */,
+				E3E8A38B29FD0E4B00E93D4D /* Swinject */,
 			);
 			productName = Tetris;
 			productReference = E35C82CA2828155400FAD0E0 /* Tetris.app */;
@@ -303,6 +317,7 @@
 			mainGroup = E35C82C12828155400FAD0E0;
 			packageReferences = (
 				E3E8A38429FCFDCD00E93D4D /* XCRemoteSwiftPackageReference "SnapKit" */,
+				E3E8A38A29FD0E4B00E93D4D /* XCRemoteSwiftPackageReference "Swinject" */,
 			);
 			productRefGroup = E35C82CB2828155400FAD0E0 /* Products */;
 			projectDirPath = "";
@@ -339,6 +354,7 @@
 				E3E8A37D29FCFA3400E93D4D /* ModeSelectionPresenter.swift in Sources */,
 				E3E8A37F29FCFA3400E93D4D /* ModeSelectionViewController.swift in Sources */,
 				E3FCDA78282A8E1E00125CBB /* MultyPlayerPresenter.swift in Sources */,
+				E3E8A38F29FD0EE400E93D4D /* AssemblyModuls.swift in Sources */,
 				E3E8A38029FCFA3400E93D4D /* ModeSelectionModuleConfigurator.swift in Sources */,
 				E35C82F02828441600FAD0E0 /* NetworkWebTocken.swift in Sources */,
 				E3E8A37E29FCFA3400E93D4D /* ModeSelectionRouter.swift in Sources */,
@@ -570,6 +586,14 @@
 				minimumVersion = 5.6.0;
 			};
 		};
+		E3E8A38A29FD0E4B00E93D4D /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 2.8.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -577,6 +601,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E3E8A38429FCFDCD00E93D4D /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		E3E8A38B29FD0E4B00E93D4D /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E3E8A38A29FD0E4B00E93D4D /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

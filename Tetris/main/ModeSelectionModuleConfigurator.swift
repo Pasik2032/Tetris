@@ -3,34 +3,32 @@
 //  Tetris
 //
 //  Created Даниил Пасилецкий on 29.04.2023.
-//  Copyright © 2023 ___ORGANIZATIONNAME___. All rights reserved.
+//  Copyright © 2023 ISS. All rights reserved.
 //
 
 import UIKit
+import Swinject
 
-final class ModeSelectionModuleConfigurator {
+typealias ModeSelection = ModeSelectionViewController
 
-  // MARK: - Configure
+final class MTScooterRatesAssembly: Swinject.Assembly {
+  public func assemble(container: Container) {
+    container.register(ModeSelection.self) { resolver in
+      let presenter = resolver.resolve(ModeSelectionPresenter.self)!
+      return ModeSelectionViewController(presenter: presenter)
+    }
 
-  func configure(
-    output: ModeSelectionModuleOutput? = nil
-  ) -> (
-    view: ModeSelectionViewController,
-    input: ModeSelectionModuleInput
-  ) {
-    let view = ModeSelectionViewController()
-    let presenter = ModeSelectionPresenter()
-    let router = ModeSelectionRouter()
+    container.register(ModeSelectionRouter.self) { resolver in
+      return ModeSelectionRouter()
+    }
 
-    presenter.view = view
-    presenter.router = router
-    presenter.output = output
-
-    router.view = view
-
-    view.output = presenter
-
-    return (view, presenter)
+    container.register(ModeSelectionPresenter.self) { resolver in
+      let router = resolver.resolve(ModeSelectionRouter.self)!
+      return ModeSelectionPresenter(router: router)
+    }.initCompleted { resolver, presenter in
+      let view = resolver.resolve(ModeSelection.self)!
+      presenter.view = view
+      presenter.router?.view = view
+    }
   }
 }
-

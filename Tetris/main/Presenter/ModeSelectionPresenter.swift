@@ -19,8 +19,12 @@ final class ModeSelectionPresenter {
   // MARK: - Properties
 
   weak var view: ModeSelectionViewInput?
-  var router: ModeSelectionRouterInput?
+  var router: ModeSelectionRouter?
   weak var output: ModeSelectionModuleOutput?
+
+  init(router: ModeSelectionRouter) {
+    self.router = router
+  }
 }
 
 // MARK: - ModeSelectionViewOutput
