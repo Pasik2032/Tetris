@@ -13,7 +13,6 @@
 		E33F30DD28297AA9002ABFBA /* NetworkAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33F30DC28297AA9002ABFBA /* NetworkAPI.swift */; };
 		E35C82CE2828155400FAD0E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35C82CD2828155400FAD0E0 /* AppDelegate.swift */; };
 		E35C82D02828155400FAD0E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35C82CF2828155400FAD0E0 /* SceneDelegate.swift */; };
-		E35C82D22828155400FAD0E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35C82D12828155400FAD0E0 /* ViewController.swift */; };
 		E35C82D72828155600FAD0E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E35C82D62828155600FAD0E0 /* Assets.xcassets */; };
 		E35C82DA2828155600FAD0E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E35C82D82828155600FAD0E0 /* LaunchScreen.storyboard */; };
 		E35C82E4282817C400FAD0E0 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35C82E3282817C400FAD0E0 /* ARViewController.swift */; };
@@ -25,7 +24,12 @@
 		E35C82F22828599900FAD0E0 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35C82F12828599800FAD0E0 /* UserModel.swift */; };
 		E35C82F72828766200FAD0E0 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35C82F62828766200FAD0E0 /* LoginPresenter.swift */; };
 		E3B7CCA0283180DB007C19DC /* ControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B7CC9E283180DB007C19DC /* ControlViewController.swift */; };
-		E3B7CCA1283180DB007C19DC /* ControlViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3B7CC9F283180DB007C19DC /* ControlViewController.xib */; };
+		E3E8A37D29FCFA3400E93D4D /* ModeSelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E8A37929FCFA3400E93D4D /* ModeSelectionPresenter.swift */; };
+		E3E8A37E29FCFA3400E93D4D /* ModeSelectionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E8A37A29FCFA3400E93D4D /* ModeSelectionRouter.swift */; };
+		E3E8A37F29FCFA3400E93D4D /* ModeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E8A37B29FCFA3400E93D4D /* ModeSelectionViewController.swift */; };
+		E3E8A38029FCFA3400E93D4D /* ModeSelectionModuleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E8A37C29FCFA3400E93D4D /* ModeSelectionModuleConfigurator.swift */; };
+		E3E8A38329FCFB2400E93D4D /* UIView + setupUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E8A38229FCFB2400E93D4D /* UIView + setupUI.swift */; };
+		E3E8A38629FCFDCD00E93D4D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E3E8A38529FCFDCD00E93D4D /* SnapKit */; };
 		E3F78D50282C425F001B8E55 /* WaitingRoomViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3F78D4F282C425F001B8E55 /* WaitingRoomViewController.xib */; };
 		E3FCDA76282A7E1D00125CBB /* MyltyPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FCDA75282A7E1D00125CBB /* MyltyPlayerViewController.swift */; };
 		E3FCDA78282A8E1E00125CBB /* MultyPlayerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FCDA77282A8E1E00125CBB /* MultyPlayerPresenter.swift */; };
@@ -39,7 +43,6 @@
 		E35C82CA2828155400FAD0E0 /* Tetris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tetris.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E35C82CD2828155400FAD0E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E35C82CF2828155400FAD0E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E35C82D12828155400FAD0E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E35C82D62828155600FAD0E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E35C82D92828155600FAD0E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E35C82DB2828155600FAD0E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -52,7 +55,11 @@
 		E35C82F12828599800FAD0E0 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		E35C82F62828766200FAD0E0 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		E3B7CC9E283180DB007C19DC /* ControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlViewController.swift; sourceTree = "<group>"; };
-		E3B7CC9F283180DB007C19DC /* ControlViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ControlViewController.xib; sourceTree = "<group>"; };
+		E3E8A37929FCFA3400E93D4D /* ModeSelectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectionPresenter.swift; sourceTree = "<group>"; };
+		E3E8A37A29FCFA3400E93D4D /* ModeSelectionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectionRouter.swift; sourceTree = "<group>"; };
+		E3E8A37B29FCFA3400E93D4D /* ModeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectionViewController.swift; sourceTree = "<group>"; };
+		E3E8A37C29FCFA3400E93D4D /* ModeSelectionModuleConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectionModuleConfigurator.swift; sourceTree = "<group>"; };
+		E3E8A38229FCFB2400E93D4D /* UIView + setupUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + setupUI.swift"; sourceTree = "<group>"; };
 		E3F78D4F282C425F001B8E55 /* WaitingRoomViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WaitingRoomViewController.xib; sourceTree = "<group>"; };
 		E3FCDA75282A7E1D00125CBB /* MyltyPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyltyPlayerViewController.swift; sourceTree = "<group>"; };
 		E3FCDA77282A8E1E00125CBB /* MultyPlayerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultyPlayerPresenter.swift; sourceTree = "<group>"; };
@@ -63,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3E8A38629FCFDCD00E93D4D /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +122,7 @@
 		E35C82CC2828155400FAD0E0 /* Tetris */ = {
 			isa = PBXGroup;
 			children = (
+				E3E8A38129FCFAF300E93D4D /* Extension */,
 				E3B7CC9B28318081007C19DC /* Control */,
 				E3FCDA74282A7DF300125CBB /* multy */,
 				E33F30CF28292D97002ABFBA /* WaitingRoom */,
@@ -134,7 +143,10 @@
 		E35C82E12828177D00FAD0E0 /* main */ = {
 			isa = PBXGroup;
 			children = (
-				E35C82D12828155400FAD0E0 /* ViewController.swift */,
+				E3E8A38929FD0D1300E93D4D /* Router */,
+				E3E8A38829FCFEA500E93D4D /* Presenter */,
+				E3E8A38729FCFE9200E93D4D /* View */,
+				E3E8A37C29FCFA3400E93D4D /* ModeSelectionModuleConfigurator.swift */,
 			);
 			path = main;
 			sourceTree = "<group>";
@@ -196,10 +208,41 @@
 		E3B7CC9B28318081007C19DC /* Control */ = {
 			isa = PBXGroup;
 			children = (
-				E3B7CC9E283180DB007C19DC /* ControlViewController.swift */,
-				E3B7CC9F283180DB007C19DC /* ControlViewController.xib */,
 			);
 			path = Control;
+			sourceTree = "<group>";
+		};
+		E3E8A38129FCFAF300E93D4D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E3E8A38229FCFB2400E93D4D /* UIView + setupUI.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		E3E8A38729FCFE9200E93D4D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E3B7CC9E283180DB007C19DC /* ControlViewController.swift */,
+				E3E8A37B29FCFA3400E93D4D /* ModeSelectionViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E3E8A38829FCFEA500E93D4D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				E3E8A37929FCFA3400E93D4D /* ModeSelectionPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		E3E8A38929FD0D1300E93D4D /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				E3E8A37A29FCFA3400E93D4D /* ModeSelectionRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		E3FCDA74282A7DF300125CBB /* multy */ = {
@@ -227,6 +270,9 @@
 			dependencies = (
 			);
 			name = Tetris;
+			packageProductDependencies = (
+				E3E8A38529FCFDCD00E93D4D /* SnapKit */,
+			);
 			productName = Tetris;
 			productReference = E35C82CA2828155400FAD0E0 /* Tetris.app */;
 			productType = "com.apple.product-type.application";
@@ -255,6 +301,9 @@
 				Base,
 			);
 			mainGroup = E35C82C12828155400FAD0E0;
+			packageReferences = (
+				E3E8A38429FCFDCD00E93D4D /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = E35C82CB2828155400FAD0E0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -269,7 +318,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3B7CCA1283180DB007C19DC /* ControlViewController.xib in Resources */,
 				E35C82DA2828155600FAD0E0 /* LaunchScreen.storyboard in Resources */,
 				E3F78D50282C425F001B8E55 /* WaitingRoomViewController.xib in Resources */,
 				E35C82D72828155600FAD0E0 /* Assets.xcassets in Resources */,
@@ -288,10 +336,14 @@
 				E33F30D228292DD1002ABFBA /* WaitingRoomViewController.swift in Sources */,
 				E33F30DB2829700A002ABFBA /* UIView+Shadow.swift in Sources */,
 				E33F30DD28297AA9002ABFBA /* NetworkAPI.swift in Sources */,
-				E35C82D22828155400FAD0E0 /* ViewController.swift in Sources */,
+				E3E8A37D29FCFA3400E93D4D /* ModeSelectionPresenter.swift in Sources */,
+				E3E8A37F29FCFA3400E93D4D /* ModeSelectionViewController.swift in Sources */,
 				E3FCDA78282A8E1E00125CBB /* MultyPlayerPresenter.swift in Sources */,
+				E3E8A38029FCFA3400E93D4D /* ModeSelectionModuleConfigurator.swift in Sources */,
 				E35C82F02828441600FAD0E0 /* NetworkWebTocken.swift in Sources */,
+				E3E8A37E29FCFA3400E93D4D /* ModeSelectionRouter.swift in Sources */,
 				E35C82E62828186A00FAD0E0 /* ARVC+ARSCNDelegate.swift in Sources */,
+				E3E8A38329FCFB2400E93D4D /* UIView + setupUI.swift in Sources */,
 				E35C82F72828766200FAD0E0 /* LoginPresenter.swift in Sources */,
 				E3B7CCA0283180DB007C19DC /* ControlViewController.swift in Sources */,
 				E35C82E82828199C00FAD0E0 /* TetrisEngine.swift in Sources */,
@@ -508,6 +560,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E3E8A38429FCFDCD00E93D4D /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E3E8A38529FCFDCD00E93D4D /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E3E8A38429FCFDCD00E93D4D /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E35C82C22828155400FAD0E0 /* Project object */;
 }
