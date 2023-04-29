@@ -147,7 +147,7 @@ extension NetworkWebTocken: NetworkRequest, NetworkResponse {
 }
 
 //MARK: - Autoresation
-extension NetworkWebTocken: NetworkAutoresation{
+extension NetworkWebTocken: NetworkAutoresation {
     func autoresation(str: String,  completion: @escaping (String) -> Void) {
         websocket?.send(.string(str), completionHandler: { eror in
             if let eror = eror {

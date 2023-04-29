@@ -24,5 +24,15 @@ extension ModeSelectionRouter: ModeSelectionRouterInput {
   func showControl() {
     view?.present(ControlViewController(), animated: true)
   }
+
+  func showMultyGame() {
+    let vc = MyltyPlayerViewController()
+    view?.present(vc, animated: true)
+  }
+
+  func showSingleGame() {
+    let vc = ARViewController()
+    view?.present(vc, animated: true)
+  }
 }
 

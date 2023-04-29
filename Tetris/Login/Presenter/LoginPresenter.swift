@@ -7,27 +7,37 @@
 
 import Foundation
 
-protocol LoginPresenterProtocol: AnyObject {
-    func login(login: String, password: String)
+protocol LogInOutputModule: AnyObject {
+  func update(
+    login: String,
+    password: String,
+    success: @escaping ()->Void,
+    failed: @escaping (String)->Void
+  )
 }
 
-class LoginPresenter: LoginPresenterProtocol {
+protocol LoginPresenterProtocol: AnyObject {
+  func login(login: String, password: String)
+}
 
-     weak var view: viewLoginProtocol?
+final class LoginPresenter: LoginPresenterProtocol {
+  weak var view: viewLoginProtocol?
+  weak var output: LogInOutputModule?
 
-    private lazy var network = NetworkWebTocken.getNetworkAutoresation()
+  init(output: LogInOutputModule?) {
+    self.output = output
+  }
 
-    func login(login: String, password: String) {
-        network.autoresation(str: "\(login) \(password)") { [weak self] input in
-            if input == "Соеденение установленно" {
-                DispatchQueue.main.async {
-                self?.view?.showWaiting()
-                }
-            } else {
-                DispatchQueue.main.async {
-                    self?.view?.showInvalid(input)
-                }
-            }
-        }
+  func login(login: String, password: String) {
+    output?.update(
+      login: login,
+      password: password
+    ) { [weak self] in
+      guard let self else { return }
+      self.view?.close()
+    } failed: { [weak self] errorMessage in
+      guard let self else { return }
+      self.view?.showInvalid(errorMessage)
     }
+  }
 }

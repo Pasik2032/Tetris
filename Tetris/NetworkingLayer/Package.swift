@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "NetworkingLayer",
     platforms: [
-      .iOS(.v12),
+      .iOS(.v13),
     ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
@@ -20,6 +20,7 @@ let package = Package(
       .package(url: "https://github.com/Alamofire/Alamofire.git", exact: "5.6.2"),
       .package(url: "https://github.com/SwiftyJSON/SwiftyJSON.git", exact: "5.0.0"),
       .package(url: "https://github.com/Swinject/Swinject.git", exact: "2.8.1"),
+      .package(url: "https://github.com/daltoniam/Starscream.git", .upToNextMajor(from: "4.0.0")),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -30,6 +31,7 @@ let package = Package(
               .product(name: "Alamofire", package: "Alamofire"),
               .product(name: "SwiftyJSON", package: "SwiftyJSON"),
               "Swinject",
+              "Starscream",
             ]),
         .testTarget(
             name: "NetworkingLayerTests",

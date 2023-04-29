@@ -13,6 +13,7 @@ import NetworkingLayer
   private static let assemblies: [Swinject.Assembly] = [
     ModeSelectionAssembly(),
     UserServiceAssembly(),
+    LogInAssembly(),
     NetworkingLayer.ModuleAssembly(),
   ]
 

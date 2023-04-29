@@ -15,5 +15,9 @@ public final class ModuleAssembly: Swinject.Assembly {
     container.register(NetworkingProtocol.self) { resolver in
       Networking()
     }.inObjectScope(.container)
+
+    container.register(SocketServiceProtocol.self) { resolver in
+      SocketService()
+    }.inObjectScope(.container)
   }
 }

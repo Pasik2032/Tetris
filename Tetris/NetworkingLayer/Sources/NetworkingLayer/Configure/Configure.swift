@@ -11,6 +11,7 @@ import Alamofire
 enum NetworkConfig {
 
   static var baseURL: String = "http://MacBook-Pro-10.local:8080/"
+  static var socketURL: String = "ws://MacBook-Pro-10.local:8080/websocket"
 
   static var locale: String = "ru-Ru"
   static var appVersion: String = ""

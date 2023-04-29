@@ -34,17 +34,18 @@ final class ModeSelectionPresenter {
 
 extension ModeSelectionPresenter: ModeSelectionViewOutput {
   func touchButtonSingle() {
-
+    self.router?.showSingleGame()
   }
 
   func touchButtonMulty() {
-
+    userService.authorizationCheck { [weak self] in
+      self.router?.showMultyGame()
+    }
   }
 
   func touchButtonControll() {
     router?.showControl()
   }
-
 
   func viewDidLoad() {
     userService.getOnline { model in

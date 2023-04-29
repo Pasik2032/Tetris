@@ -13,7 +13,8 @@ final class UserServiceAssembly: Swinject.Assembly {
   public func assemble(container: Container) {
     container.register(UserServiceProtocol.self) { resolver in
       let networking = resolver.resolve(NetworkingProtocol.self)!
-      return UserService(networking: networking)
+      let socket = SocketService()
+      return UserService(networking: networking, socket: socket)
     }
   }
 }
