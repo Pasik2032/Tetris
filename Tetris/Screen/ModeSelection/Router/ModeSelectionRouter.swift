@@ -33,7 +33,8 @@ extension ModeSelectionRouter: ModeSelectionRouterInput {
   }
 
   func showSingleGame() {
-    let vc = ARViewController()
+    let vc = resolver.resolve(GameModule.self, argument: GamePresenter.TypeGame.multy)!
+    vc.modalPresentationStyle = .overFullScreen
     view?.present(vc, animated: true)
   }
 

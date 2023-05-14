@@ -17,7 +17,7 @@ final class WaitingRoomAssembly: Swinject.Assembly {
       let presenter = WaitingRoomPresenter(onlineService: onlineService)
       let view = WaitingRoomViewController(presenter: presenter, nibName: "WaitingRoomViewController")
       presenter.view = view
-      let router = WaitingRoomRouter(view: view)
+      let router = WaitingRoomRouter(view: view, resolver: resolver)
       presenter.router = router
       return view
     }

@@ -14,6 +14,8 @@ import NetworkingLayer
     ModeSelectionAssembly(),
     AuthorizationServiceAssembly(),
     OnlineServiceAssembly(),
+    GameAssembly(),
+    GameServiceAssembly(),
     ModeSelectionAssembly(),
     WaitingRoomAssembly(),
     LogInAssembly(),

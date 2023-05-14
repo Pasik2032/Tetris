@@ -7,14 +7,17 @@
 
 import Foundation
 import UIKit
+import Swinject
 
 final class WaitingRoomRouter {
 
   private weak var view: UIViewController?
   private var alert: UIAlertController?
+  private var resolver: Resolver
 
-  init(view: UIViewController) {
+  init(view: UIViewController, resolver: Resolver) {
     self.view = view
+    self.resolver = resolver
   }
 
   func showWaiting(username: String, handel: @escaping (UIAlertAction) -> Void) {
@@ -32,6 +35,9 @@ final class WaitingRoomRouter {
   }
 
   func showGame() {
-
+    alert?.dismiss(animated: true)
+    let vc = resolver.resolve(GameModule.self, argument: GamePresenter.TypeGame.multy)!
+    vc.modalPresentationStyle = .overFullScreen
+    view?.present(vc, animated: true)
   }
 }

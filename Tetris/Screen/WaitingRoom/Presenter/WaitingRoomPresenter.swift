@@ -53,8 +53,7 @@ final class WaitingRoomPresenter: WaitingRoomPresenterProtocol {
   }
 
   func touchUser(index: Int) {
-
-    onlineService.responseGame(name: users[index].username) {[weak self] in
+    onlineService.responseGame(name: users[index].username) { [weak self] in
       self?.router?.showGame()
     } cancel: { [weak self] in
       guard let self else { return }
