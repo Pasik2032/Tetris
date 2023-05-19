@@ -32,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		632142A72A0F89360004047F /* TetrisGameCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = TetrisGameCore; path = Tetris/TetrisGameCore; sourceTree = "<group>"; };
 		E33F30D028292DD1002ABFBA /* WaitingRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingRoomViewController.swift; sourceTree = "<group>"; };
 		E33F30D828293E1A002ABFBA /* WaitingRoomPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingRoomPresenter.swift; sourceTree = "<group>"; };
 		E33F30DA2829700A002ABFBA /* UIView+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
@@ -69,6 +70,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		632142A62A0F89360004047F /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				632142A72A0F89360004047F /* TetrisGameCore */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 		E33F30CF28292D97002ABFBA /* WaitingRoom */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +107,7 @@
 		E35C82C12828155400FAD0E0 = {
 			isa = PBXGroup;
 			children = (
+				632142A62A0F89360004047F /* Packages */,
 				E35C82CC2828155400FAD0E0 /* Tetris */,
 				E35C82CB2828155400FAD0E0 /* Products */,
 			);
@@ -439,7 +449,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = LJQ6356456;
+				DEVELOPMENT_TEAM = V6LT92FY3N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Tetris/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -466,7 +476,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = LJQ6356456;
+				DEVELOPMENT_TEAM = V6LT92FY3N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Tetris/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
