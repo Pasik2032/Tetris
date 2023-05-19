@@ -85,8 +85,10 @@ final class ARAdapter: NSObject {
 
 extension ARAdapter: ARSCNViewDelegate {
   func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-    guard let planeAnchor = anchor as? ARPlaneAnchor else {return}
+    if presenter.games.first?.field.isEmpty ?? true { return }
+    guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
     let planeNode = createFloorNode(anchor: planeAnchor, games: &presenter.games)
+
     for nodes in planeNode {
       node.addChildNode(nodes)
     }

@@ -8,6 +8,11 @@
 import Foundation
 import NetworkingLayer
 
+struct UserModel: Codable {
+  var id: Int
+  var username: String
+}
+
 protocol OnlineServiceProtocol {
   func getOnline(
     succes: @escaping ([UserModel]) -> Void,

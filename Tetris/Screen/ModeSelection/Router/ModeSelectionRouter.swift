@@ -33,7 +33,7 @@ extension ModeSelectionRouter: ModeSelectionRouterInput {
   }
 
   func showSingleGame() {
-    let vc = resolver.resolve(GameModule.self, argument: GamePresenter.TypeGame.multy)!
+    let vc = resolver.resolve(GameModule.self, argument: GamePresenter.TypeGame.single)!
     vc.modalPresentationStyle = .overFullScreen
     view?.present(vc, animated: true)
   }

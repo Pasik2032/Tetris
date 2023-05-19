@@ -17,6 +17,7 @@
 		E35C82EC28283BB500FAD0E0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35C82EA28283BB500FAD0E0 /* LoginViewController.swift */; };
 		E35C82ED28283BB500FAD0E0 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E35C82EB28283BB500FAD0E0 /* LoginViewController.xib */; };
 		E35C82F72828766200FAD0E0 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35C82F62828766200FAD0E0 /* LoginPresenter.swift */; };
+		E35EE8592A17F54D0000AE3E /* TetrisGameCore in Frameworks */ = {isa = PBXBuildFile; productRef = E35EE8582A17F54D0000AE3E /* TetrisGameCore */; };
 		E3B7CCA0283180DB007C19DC /* ControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B7CC9E283180DB007C19DC /* ControlViewController.swift */; };
 		E3E8A37D29FCFA3400E93D4D /* ModeSelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E8A37929FCFA3400E93D4D /* ModeSelectionPresenter.swift */; };
 		E3E8A37E29FCFA3400E93D4D /* ModeSelectionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E8A37A29FCFA3400E93D4D /* ModeSelectionRouter.swift */; };
@@ -52,6 +53,7 @@
 		E33F30D028292DD1002ABFBA /* WaitingRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingRoomViewController.swift; sourceTree = "<group>"; };
 		E33F30D828293E1A002ABFBA /* WaitingRoomPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingRoomPresenter.swift; sourceTree = "<group>"; };
 		E33F30DA2829700A002ABFBA /* UIView+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shadow.swift"; sourceTree = "<group>"; };
+		E3440EA52A17F4FC00EC9F5C /* TetrisGameCore */ = {isa = PBXFileReference; lastKnownFileType = text; name = TetrisGameCore; path = Tetris/TetrisGameCore; sourceTree = SOURCE_ROOT; };
 		E35C82CA2828155400FAD0E0 /* Tetris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tetris.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E35C82CD2828155400FAD0E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E35C82CF2828155400FAD0E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				E3E8A38C29FD0E4B00E93D4D /* Swinject in Frameworks */,
 				E3E8A39829FD274200E93D4D /* NetworkingLayer in Frameworks */,
 				E3E8A3A229FD5AC000E93D4D /* Starscream in Frameworks */,
+				E35EE8592A17F54D0000AE3E /* TetrisGameCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +272,7 @@
 		E3E8A39129FD168A00E93D4D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				E3440EA52A17F4FC00EC9F5C /* TetrisGameCore */,
 				E3E8A39229FD16D200E93D4D /* NetworkingLayer */,
 			);
 			path = Modules;
@@ -417,6 +421,7 @@
 				E3E8A38B29FD0E4B00E93D4D /* Swinject */,
 				E3E8A39729FD274200E93D4D /* NetworkingLayer */,
 				E3E8A3A129FD5AC000E93D4D /* Starscream */,
+				E35EE8582A17F54D0000AE3E /* TetrisGameCore */,
 			);
 			productName = Tetris;
 			productReference = E35C82CA2828155400FAD0E0 /* Tetris.app */;
@@ -748,6 +753,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E35EE8582A17F54D0000AE3E /* TetrisGameCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TetrisGameCore;
+		};
 		E3E8A38529FCFDCD00E93D4D /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E3E8A38429FCFDCD00E93D4D /* XCRemoteSwiftPackageReference "SnapKit" */;
