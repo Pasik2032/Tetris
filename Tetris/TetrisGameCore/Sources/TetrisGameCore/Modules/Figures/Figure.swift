@@ -22,12 +22,7 @@ final class Figure {
         
         for coordinate in coordinates {
             var check = true
-            var copyCoordinate = (coordinate.0 - 1, coordinate.1)
-            
-            if copyCoordinate.0 == -1 {
-                check = false
-                continue
-            }
+            let copyCoordinate = (coordinate.0 - 1, coordinate.1)
             
             for cord in coordinates {
                 if cord == copyCoordinate {
