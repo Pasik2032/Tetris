@@ -11,6 +11,7 @@ import SceneKit
 
 protocol ARAdapterDelegate {
   var games: [Game] { get set }
+  var isWaitGame: Bool { get }
   func rendererScene()
 }
 
@@ -85,7 +86,7 @@ final class ARAdapter: NSObject {
 
 extension ARAdapter: ARSCNViewDelegate {
   func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-    if presenter.games.first?.field.isEmpty ?? true { return }
+    guard presenter.isWaitGame else { return }
     guard let planeAnchor = anchor as? ARPlaneAnchor else { return }
     let planeNode = createFloorNode(anchor: planeAnchor, games: &presenter.games)
 

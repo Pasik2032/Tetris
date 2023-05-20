@@ -18,6 +18,7 @@
 		E35C82ED28283BB500FAD0E0 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E35C82EB28283BB500FAD0E0 /* LoginViewController.xib */; };
 		E35C82F72828766200FAD0E0 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35C82F62828766200FAD0E0 /* LoginPresenter.swift */; };
 		E35EE8592A17F54D0000AE3E /* TetrisGameCore in Frameworks */ = {isa = PBXBuildFile; productRef = E35EE8582A17F54D0000AE3E /* TetrisGameCore */; };
+		E35EE85B2A18C5F20000AE3E /* UIColor + Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35EE85A2A18C5F20000AE3E /* UIColor + Image.swift */; };
 		E3B7CCA0283180DB007C19DC /* ControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B7CC9E283180DB007C19DC /* ControlViewController.swift */; };
 		E3E8A37D29FCFA3400E93D4D /* ModeSelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E8A37929FCFA3400E93D4D /* ModeSelectionPresenter.swift */; };
 		E3E8A37E29FCFA3400E93D4D /* ModeSelectionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E8A37A29FCFA3400E93D4D /* ModeSelectionRouter.swift */; };
@@ -63,6 +64,7 @@
 		E35C82EA28283BB500FAD0E0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		E35C82EB28283BB500FAD0E0 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		E35C82F62828766200FAD0E0 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		E35EE85A2A18C5F20000AE3E /* UIColor + Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Image.swift"; sourceTree = "<group>"; };
 		E3B7CC9E283180DB007C19DC /* ControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlViewController.swift; sourceTree = "<group>"; };
 		E3E8A37929FCFA3400E93D4D /* ModeSelectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectionPresenter.swift; sourceTree = "<group>"; };
 		E3E8A37A29FCFA3400E93D4D /* ModeSelectionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModeSelectionRouter.swift; sourceTree = "<group>"; };
@@ -378,6 +380,7 @@
 			isa = PBXGroup;
 			children = (
 				E3F609F42A113F550041DBC9 /* Game.swift */,
+				E35EE85A2A18C5F20000AE3E /* UIColor + Image.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -511,6 +514,7 @@
 				E3F609E02A0F98A50041DBC9 /* WaitingRoomRouter.swift in Sources */,
 				E3B7CCA0283180DB007C19DC /* ControlViewController.swift in Sources */,
 				E35C82CE2828155400FAD0E0 /* AppDelegate.swift in Sources */,
+				E35EE85B2A18C5F20000AE3E /* UIColor + Image.swift in Sources */,
 				E35C82D02828155400FAD0E0 /* SceneDelegate.swift in Sources */,
 				E33F30D928293E1A002ABFBA /* WaitingRoomPresenter.swift in Sources */,
 				E3F609E92A0FBE340041DBC9 /* GameViewController.swift in Sources */,

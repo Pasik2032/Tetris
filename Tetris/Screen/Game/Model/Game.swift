@@ -102,10 +102,10 @@ extension Game: TetrisCoreOutput {
       for x in 0..<array[y].count {
         switch array[y][x] {
         case .busy(let color):
-          print("AAAAAAAAAAAAAAAAAA")
-          field[y][x].geometry?.firstMaterial?.diffuse.contents = color
+          field[y][x].geometry?.firstMaterial?.diffuse.contents = color.imageBox
         case .free:
           field[y][x].geometry?.firstMaterial?.diffuse.contents = UIColor.clear
+          field[y][x].geometry?.firstMaterial?.diffuse.contents = UIImage(named: "box")
         }
       }
     }

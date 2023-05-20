@@ -46,6 +46,9 @@ final class GamePresenter {
   weak var view: GameViewInput?
 
   var games: [Game]
+  var isWaitGame: Bool {
+    state == .seachPlane
+  }
 
   private var state: State = .seachPlane
   private var type: TypeGame
