@@ -10,15 +10,12 @@ import TetrisGameCore
 
 protocol GameOutput {
   func scoreDidChange(score: Int, game: Game.GameType)
+  func endGame(score: Int)
 }
 
 
 final class Game {
-  var field: [[SCNNode]] = [[]] {
-    didSet {
-      print("!!!\(field.count)")
-    }
-  }
+  var field: [[SCNNode]] = [[]]
   let type: GameType
   var core: TetrisCoreInput
 
@@ -33,12 +30,12 @@ final class Game {
       self.core = TetrisGameCore()
     case .remoute:
       self.core = TetrisGameCore()
+      self.core = TetrisGameCore(generate: self)
     }
     self.core.output = self
   }
 
   func action(_ a: Action) {
-    print("!!\(a)")
     switch a {
     case .left: core.left()
     case .right: core.right()
@@ -51,13 +48,10 @@ final class Game {
 
   func start() {
     field.removeFirst()
-    print("Start")
     self.core.start()
   }
 
   func setGenerate(figure: [Int]) {
-    print("!!!!\(figure)")
-//    self.core.generateFigure = self
     self.generateFigures = figure
   }
 
@@ -112,7 +106,7 @@ extension Game: TetrisCoreOutput {
   }
 
   func endGame(points: Int) {
-    print("END")
+    output?.endGame(score: points)
   }
 
   func changingPoints(points: Int) {
@@ -127,52 +121,3 @@ extension Game: GenerateProtocol {
     return fig
   }
 }
-
-//class TetrisMock: TetrisCoreInput {
-//  var generateFigure: TetrisGenerat?
-//
-//  var output: TetrisCoreOutput?
-//
-//  func start() {
-//    print("Start")
-//  }
-//
-//  func left() {
-//    print("left")
-//  }
-//
-//  func right() {
-//    print("right")
-//  }
-//
-//  func up() {
-//    print("up")
-//  }
-//
-//  func down() {
-//    print("down")
-//  }
-//
-//  func pause() { }
-//  func resume() { }
-//}
-////
-////protocol TetrisGenerat {
-////  func generate() -> Int
-////}
-//
-////protocol TetrisCoreInput {
-////  var output: TetrisCoreOutput? { get set }
-////  var generateFigure: TetrisGenerat? { get set }
-////  func start()
-////  func left()
-////  func right()
-////  func pause()
-////  func resume()
-////  func up()
-////  func down()
-////}
-////
-////protocol TetrisCoreOutput {
-////  func changingPoints(points: Int)
-////}

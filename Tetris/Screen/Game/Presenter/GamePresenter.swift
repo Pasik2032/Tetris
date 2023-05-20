@@ -117,6 +117,11 @@ extension GamePresenter: GameViewOutput {
 }
 
 extension GamePresenter: GameOutput {
+  func endGame(score: Int) {
+    view?.showEndGame(point: score)
+    state = .waitStart
+  }
+
   func scoreDidChange(score: Int, game: Game.GameType) {
     switch game {
     case .remoute: view?.pointRemouteDidChande(point: score)
