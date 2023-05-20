@@ -7,7 +7,7 @@ public class TetrisGameCore: TetrisCoreInput {
     
     private var gameStatus: GameStatuses = .notStarted
     private var gameTimer: Timer?
-    private var speed: Float = 2.0
+    private var speed: Float = 0.4
     private var field: [[FieldCellStatuses]] {
         didSet {
             print("jr")
@@ -57,8 +57,8 @@ extension TetrisGameCore {
     
     public func start() {
         gameStatus = .inProgress
-print("dfdf")
-        guard var figureType = Shapes(rawValue: generate.generate()) else { return }
+
+        guard let figureType = Shapes(rawValue: generate.generate()) else { return }
         currentFigure = Figure(length: lengthOfField, width: widthOfField, type: figureType)
         
         gameTimer = Timer.scheduledTimer(
@@ -92,8 +92,10 @@ print("dfdf")
             copyOfCurrentFigureCoordinates[number].1 -= 1
         }
         
-        if checkCoordinates(coordinates: copyOfCurrentFigureCoordinates) {
+        if checkCoordinates(figure: currentFigure, newCoordinates: copyOfCurrentFigureCoordinates) {
+            clearOldFigureCells(coordinates: currentFigure.coordinates)
             currentFigure.coordinates = copyOfCurrentFigureCoordinates
+            paintFigureCells(figure: currentFigure)
         }
     }
     
@@ -105,8 +107,10 @@ print("dfdf")
             copyOfCurrentFigureCoordinates[number].1 += 1
         }
         
-        if checkCoordinates(coordinates: copyOfCurrentFigureCoordinates) {
+        if checkCoordinates(figure: currentFigure, newCoordinates: copyOfCurrentFigureCoordinates) {
+            clearOldFigureCells(coordinates: currentFigure.coordinates)
             currentFigure.coordinates = copyOfCurrentFigureCoordinates
+            paintFigureCells(figure: currentFigure)
         }
     }
     
@@ -114,8 +118,10 @@ print("dfdf")
         guard let currentFigure else { return }
         var copyOfCurrentFigureCoordinates = currentFigure.coordinates
         
-        while checkCoordinates(coordinates: copyOfCurrentFigureCoordinates) {
+        while checkCoordinates(figure: currentFigure, newCoordinates: copyOfCurrentFigureCoordinates) {
+            clearOldFigureCells(coordinates: currentFigure.coordinates)
             currentFigure.coordinates = copyOfCurrentFigureCoordinates
+            paintFigureCells(figure: currentFigure)
             
             for number in 0..<copyOfCurrentFigureCoordinates.count {
                 copyOfCurrentFigureCoordinates[number].0 -= 1
@@ -240,7 +246,7 @@ print("dfdf")
             }
         }
         
-        guard checkCoordinates(coordinates: [a, b, c, d]) else { return }
+        guard checkCoordinates(figure: currentFigure, newCoordinates: [a, b, c, d]) else { return }
         
         currentFigure.coordinates.forEach {
             field[$0][$1] = .free
@@ -254,10 +260,16 @@ print("dfdf")
     }
     
     // Проверка возможности размещения фигуры в текущих координатах
-    public func checkCoordinates(coordinates: [(Int, Int)]) -> Bool {
-        for number in coordinates {
+    private func checkCoordinates(figure: Figure, newCoordinates: [(Int, Int)]) -> Bool {
+        for number in newCoordinates {
             if !(0..<20).contains(number.0) || !(0..<10).contains(number.1) {
                 return false
+            }
+            
+            if figure.coordinates.contains(where: { coordinatesFig in
+                coordinatesFig.0 == number.0 && coordinatesFig.1 == number.1
+            }) {
+                continue
             }
             
             switch (field[number.0][number.1]) {
@@ -280,6 +292,18 @@ print("dfdf")
             for _ in 0..<widthOfField {
                 field[i].append(FieldCellStatuses.free)
             }
+        }
+    }
+    
+    private func clearOldFigureCells(coordinates: [(Int, Int)]) {
+        for coordinate in coordinates {
+            field[coordinate.0][coordinate.1] = .free
+        }
+    }
+    
+    private func paintFigureCells(figure: Figure) {
+        for coordinate in figure.coordinates {
+            field[coordinate.0][coordinate.1] = FieldCellStatuses.busy(color: figure.type.color)
         }
     }
     
@@ -314,10 +338,15 @@ print("dfdf")
     }
     
     @objc func gameProcess(timer: Timer) {
-        guard var currentFigure else { return }
+        guard let currentFigure else { return }
         var check = true
         print("we")
         for cord in currentFigure.freeCordinates {
+            if !(0..<20).contains(cord.0) || !(0..<10).contains(cord.1) {
+                check = false
+                break
+            }
+            
             switch field[cord.0][cord.1] {
             case .free:
                 continue
@@ -329,7 +358,7 @@ print("dfdf")
         
         // Заходим если фигура не может падать дальше
         if !check {
-            timer.invalidate()
+            //timer.invalidate()
             
             for cord in currentFigure.coordinates {
                 field[cord.0][cord.1] = .busy(color: currentFigure.type.color)
@@ -337,17 +366,14 @@ print("dfdf")
             
             deleteRows()
             
-            guard var figureType = Shapes(rawValue: generate.generate()) else { return }
-            currentFigure = Figure(length: lengthOfField, width: widthOfField, type: figureType)
+            guard let figureType = Shapes(rawValue: generate.generate()) else { return }
+            self.currentFigure = Figure(length: lengthOfField, width: widthOfField, type: figureType)
             
-            gameTimer = Timer.scheduledTimer(
-                timeInterval: TimeInterval(speed),
-                target: self,
-                selector: #selector(gameProcess),
-                userInfo: nil,
-                repeats: true
-            )
+            currentFigure.coordinates.forEach {
+                field[$0][$1] = .busy(color: currentFigure.type.color)
+            }
             
+//            3
             return
         }
         
