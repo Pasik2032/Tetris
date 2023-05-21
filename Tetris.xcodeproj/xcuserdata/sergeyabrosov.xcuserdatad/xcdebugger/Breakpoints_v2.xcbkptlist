@@ -7,161 +7,33 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E83D7F99-1CAF-4C88-BE11-7871E656E4EB"
+            uuid = "BF85CD5F-F818-4228-A417-B350B672D714"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tetris/TetrisGameCore/Sources/TetrisGameCore/Modules/Main/TetrisGameCore.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "344"
-            endingLineNumber = "344"
-            landmarkName = "gameProcess(timer:)"
+            startingLineNumber = "310"
+            endingLineNumber = "310"
+            landmarkName = "deleteRows()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "879238BA-AA63-405A-900F-FE8F44FD484D"
+            uuid = "F035AD2F-B716-467D-8FF5-98142B45E8FC"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Tetris/TetrisGameCore/Sources/TetrisGameCore/Modules/Main/TetrisGameCore.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "369"
-            endingLineNumber = "369"
-            landmarkName = "gameProcess(timer:)"
+            startingLineNumber = "311"
+            endingLineNumber = "311"
+            landmarkName = "deleteRows()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1C258E6E-9A43-453E-B280-DB197658162B"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tetris/TetrisGameCore/Sources/TetrisGameCore/Modules/Main/TetrisGameCore.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "left()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "221E672A-9AD9-4DF5-B2FC-381EE7860863"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tetris/TetrisGameCore/Sources/TetrisGameCore/Modules/Main/TetrisGameCore.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
-            landmarkName = "left()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6D0748EE-5485-4745-8C85-906294E8EF2F"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tetris/TetrisGameCore/Sources/TetrisGameCore/Modules/Main/TetrisGameCore.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "left()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "6D0748EE-5485-4745-8C85-906294E8EF2F - 33b2d3c3afc475e1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TetrisGameCore.TetrisGameCore.left() -&gt; ()"
-                  moduleName = "Tetris"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sergeyabrosov/Desktop/Tetris/Tetris/Tetris/TetrisGameCore/Sources/TetrisGameCore/Modules/Main/TetrisGameCore.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "96"
-                  endingLineNumber = "96"
-                  offsetFromSymbolStart = "728">
-               </Location>
-               <Location
-                  uuid = "6D0748EE-5485-4745-8C85-906294E8EF2F - 33b2d3c3afc475e1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TetrisGameCore.TetrisGameCore.left() -&gt; ()"
-                  moduleName = "Tetris"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sergeyabrosov/Desktop/Tetris/Tetris/Tetris/TetrisGameCore/Sources/TetrisGameCore/Modules/Main/TetrisGameCore.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "96"
-                  endingLineNumber = "96"
-                  offsetFromSymbolStart = "732">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "228CBEC3-5C3E-4D95-89C1-8BBB463DAE85"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Tetris/TetrisGameCore/Sources/TetrisGameCore/Modules/Main/TetrisGameCore.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "264"
-            endingLineNumber = "264"
-            landmarkName = "checkCoordinates(figure:newCoordinates:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "228CBEC3-5C3E-4D95-89C1-8BBB463DAE85 - b8564b5de6f5ae1e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TetrisGameCore.TetrisGameCore.checkCoordinates(coordinates: Swift.Array&lt;(Swift.Int, Swift.Int)&gt;) -&gt; Swift.Bool"
-                  moduleName = "Tetris"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sergeyabrosov/Desktop/Tetris/Tetris/Tetris/TetrisGameCore/Sources/TetrisGameCore/Modules/Main/TetrisGameCore.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "264"
-                  endingLineNumber = "264"
-                  offsetFromSymbolStart = "68">
-               </Location>
-               <Location
-                  uuid = "228CBEC3-5C3E-4D95-89C1-8BBB463DAE85 - 5dd001a3ac49f01d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TetrisGameCore.TetrisGameCore.checkCoordinates(figure: TetrisGameCore.Figure, newCoordinates: Swift.Array&lt;(Swift.Int, Swift.Int)&gt;) -&gt; Swift.Bool"
-                  moduleName = "Tetris"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sergeyabrosov/Desktop/Tetris/Tetris/Tetris/TetrisGameCore/Sources/TetrisGameCore/Modules/Main/TetrisGameCore.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "264"
-                  endingLineNumber = "264"
-                  offsetFromSymbolStart = "120">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

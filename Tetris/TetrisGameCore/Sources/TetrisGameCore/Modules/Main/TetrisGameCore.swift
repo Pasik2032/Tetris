@@ -333,7 +333,13 @@ extension TetrisGameCore {
         arrayOfFulledRows.sort(by: >)
         for rowNumber in arrayOfFulledRows {
             field.remove(at: rowNumber)
-            field.append([FieldCellStatuses]())
+            
+            var addingArray = [FieldCellStatuses]()
+            for i in 0..<10 {
+                addingArray.append(.free)
+            }
+            
+            field.append(addingArray)
         }
     }
     
@@ -358,7 +364,6 @@ extension TetrisGameCore {
         
         // Заходим если фигура не может падать дальше
         if !check {
-            //timer.invalidate()
             
             for cord in currentFigure.coordinates {
                 field[cord.0][cord.1] = .busy(color: currentFigure.type.color)
@@ -373,7 +378,6 @@ extension TetrisGameCore {
                 field[$0][$1] = .busy(color: currentFigure.type.color)
             }
             
-//            3
             return
         }
         
